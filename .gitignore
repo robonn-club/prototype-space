@@ -1,0 +1,10 @@
+# Local working files 
+storage/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+
+# Generated site
+_build/

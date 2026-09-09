@@ -1,21 +1,23 @@
 # prototype-space
 
-Where an idea becomes something you can watch run.
+An open collection of what you need to turn an idea into a working prototype; the tools, and the places around Bonn where you can actually make things.
 
-An open collection of what you need to turn an idea into a prototype someone else can pull
-down and run for themselves.
+**→ [robonn-club.github.io/prototype-space](https://robonn-club.github.io/prototype-space/)** — browse and filter everything by cost, location and licence.
 
-A prototype is a simulation, a script, a dashboard, a rig on a desk, a robot — if it runs and
-someone else can run it, it counts. This is a RoBonn project, so robotics is the culture you'll
-find here, not the entry requirement.
-
-## What's here
-
-- **[prototyping_resources.md](prototyping_resources.md)** — tools to build with and finished projects to build from, by what you're making.
-- **[nrw_hardware_contacts.md](nrw_hardware_contacts.md)** — machines and parts, starting in Bonn.
-- **[nrw_investor_contacts.md](nrw_investor_contacts.md)** — funding, if it becomes a startup.
-- **[certification_resources.md](certification_resources.md)** — the rules, if it becomes a product.
+- **[prototyping_resources.md](docs/prototyping_resources.md)** — tools to build with, organised by the type of system.
+- **[generative_ai_agents.md](docs/generative_ai_agents.md)** — AI tools that shorten the path to a working prototype.
+- **[datasets.md](docs/datasets.md)** — data to train on and benchmark against.
+- **[nrw_hardware_contacts.md](docs/nrw_hardware_contacts.md)** — where to access machines and buy parts, starting in Bonn.
+- **[bonn_physical_spaces.md](docs/bonn_physical_spaces.md)** — where in Bonn to meet, build and test.
+- **[nrw_investor_contacts.md](docs/nrw_investor_contacts.md)** — funding contacts, should the project become a startup.
+- **[certification_resources.md](docs/certification_resources.md)** — what the rules require, if it becomes a product.
+- **[work_exhibit.md](docs/work_exhibit.md)** — competitions, publishing and events: where the finished thing goes.
 
 ## Contributing
 
-Add what helped you build: one sentence on why it matters, a link, and what it costs to start.
+Entries follow one strict format that the site build parses. See [CONTRIBUTING.md](CONTRIBUTING.md)
+before opening a pull request.
+
+## Licence
+
+This repository is licensed under [CC BY 4.0](LICENSE).

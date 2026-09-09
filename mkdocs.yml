@@ -1,0 +1,77 @@
+site_name: prototype
+site_description: >-
+  An open collection of what you need to turn an idea into a working prototype:
+  the tools, and the places around Bonn where you can actually make things.
+site_url: https://robonn-club.github.io/prototype-space/
+repo_url: https://github.com/robonn-club/prototype-space
+repo_name: robonn-club/prototype-space
+edit_uri: ""
+copyright: Robonn · the robotics club at Universität Bonn
+
+# The markdown at the repo root is the source of truth; build.py stages a copy
+# here along with the generated landing page and browse view.
+docs_dir: _build/docs
+site_dir: _build/site
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: en
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  font: false          # Outfit and Manrope are self-hosted; see extra.css.
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light
+  features:
+    # Tabs across the top instead of a left sidebar: this is a directory, not
+    # a manual, and the eight pages fit in one row.
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+
+nav:
+  - Home: index.md
+  - Build: build.md
+  - Make: make.md
+  - Grow: grow.md
+  - Browse: browse.md
+
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - meta
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+  - pymdownx.superfences
+  - pymdownx.smartsymbols
+
+plugins:
+  - search
+
+extra_css:
+  - assets/extra.css
+extra_javascript:
+  - assets/browse.js
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/robonn-club
+      name: Robonn on GitHub

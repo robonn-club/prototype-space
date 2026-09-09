@@ -1,0 +1,356 @@
+/* prototype-space — Robonn's palette and type, applied over Material.
+   Colours and fonts match robonn-club/webpage so the two read as one club.
+
+   Two things about Material shape the rules below:
+   - it sets html { font-size: 125% }, so 1rem is 20px, not 16px. Custom layout
+     sizes are given in px to stay predictable;
+   - .md-typeset h1..h6 (specificity 0,2,1) beats a bare class, so every custom
+     rule that fights it is scoped under .md-typeset too. */
+
+/* Self-hosted: a Google Fonts request would send every visitor's IP to Google,
+   which is not something a Bonn club site should do. Both faces are SIL OFL —
+   see the licence files alongside the woff2. */
+@font-face {
+  font-family: "Outfit";
+  src: url("fonts/outfit-var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("fonts/manrope-var.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  --rb-bg:      #ECF1F5;
+  --rb-surface: #FFFFFF;
+  --rb-raised:  #E2E8ED;
+  --rb-border:  #C1CED9;
+  --rb-accent:  #485F66;
+  --rb-brand:   #293740;
+  --rb-text:    #131313;
+  --rb-muted:   #5A6C77;
+  --rb-radius:  6px;
+  --rb-ease:    cubic-bezier(.25, .46, .45, .94);
+  --rb-display: "Outfit", system-ui, sans-serif;
+  --rb-body:    "Manrope", system-ui, sans-serif;
+  --rb-mono:    ui-monospace, SFMono-Regular, Menlo, "Liberation Mono", monospace;
+  --rb-hover:   rgba(41, 55, 64, .035);
+}
+
+[data-md-color-scheme="slate"] {
+  --rb-bg:      #131A1F;
+  --rb-surface: #1B242B;
+  --rb-raised:  #212D35;
+  --rb-border:  #33434E;
+  --rb-accent:  #9DBAC2;
+  --rb-brand:   #ECF1F5;
+  --rb-text:    #E4EAEF;
+  --rb-muted:   #94A6B1;
+  --rb-hover:   rgba(236, 241, 245, .04);
+}
+
+/* Material's own tokens, pointed at the palette above. */
+[data-md-color-scheme] {
+  --md-primary-fg-color:        #293740;
+  --md-primary-bg-color:        #FFFFFF;
+  --md-accent-fg-color:         var(--rb-accent);
+  --md-default-bg-color:        var(--rb-bg);
+  --md-default-fg-color:        var(--rb-text);
+  --md-default-fg-color--light: var(--rb-muted);
+  --md-typeset-color:           var(--rb-text);
+  --md-typeset-a-color:         var(--rb-accent);
+  --md-code-bg-color:           var(--rb-raised);
+  --md-code-fg-color:           var(--rb-accent);
+  --md-text-font:               "Manrope";
+  --md-code-font:               ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body, .md-typeset { font-family: var(--rb-body); }
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4,
+.md-header__topic, .md-tabs__link {
+  font-family: var(--rb-display);
+  letter-spacing: -0.015em;
+}
+.md-typeset h1, .md-typeset .page-title {
+  font-weight: 700;
+  color: var(--rb-brand);
+  margin: 0 0 .4rem;
+}
+.md-typeset h2 { font-weight: 600; margin-top: 2.2rem; }
+.md-typeset h3 { font-weight: 600; }
+.md-header, .md-tabs { background: #293740; }
+/* The club badge is a circular mark, which reads smaller than a square one at
+   the same box size, so give it a little more room than Material's default. */
+.md-header__button.md-logo img { height: 1.7rem; width: 1.7rem; }
+
+/* Wider content well: this is a directory, not a manual. */
+.md-grid { max-width: 58rem; }
+
+/* --- entries as rows -------------------------------------------------- */
+/* The reference robotics sites present a list of things as rows: name, one
+   line, labels — with hairline rules doing the work borders and cards used to.
+   build.py emits this markup on both the category pages and the browse view,
+   so the two surfaces are identical. */
+
+.md-typeset .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name tags" "desc tags";
+  column-gap: 1.5rem;
+  align-items: baseline;
+  padding: .75rem 0;
+  border-top: 1px solid var(--rb-border);
+}
+.md-typeset .row:hover { background: var(--rb-hover); }
+.md-typeset .row-name {
+  grid-area: name;
+  font: 600 .82rem/1.4 var(--rb-display);
+  color: var(--rb-brand);
+  text-decoration: none;
+}
+.md-typeset .row-name:hover { color: var(--rb-accent); text-decoration: underline; }
+.md-typeset .row-desc {
+  grid-area: desc;
+  margin-top: .12rem;
+  font-size: .74rem;
+  line-height: 1.55;
+  color: var(--rb-muted);
+  max-width: 62ch;
+}
+.md-typeset .row-desc a { color: var(--rb-accent); }
+.md-typeset .row-tags {
+  grid-area: tags;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .5rem;
+  padding-top: .1rem;
+}
+.md-typeset .row-tags span {
+  font: 500 .58rem var(--rb-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+  white-space: nowrap;
+}
+
+/* Numbered source-file dividers, in the Figure idiom: 01 / TOOLS. */
+.md-typeset .group-head {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: .8rem;
+  margin: 3.2rem 0 .4rem;
+  padding-bottom: .7rem;
+  border-bottom: 2px solid var(--rb-brand);
+}
+.md-typeset .group-n,
+.md-typeset .group-count {
+  font: 500 .62rem var(--rb-mono);
+  letter-spacing: .12em;
+  color: var(--rb-accent);
+}
+.md-typeset .group-name {
+  font: 600 1.05rem var(--rb-display);
+  letter-spacing: -0.01em;
+  color: var(--rb-brand);
+}
+.md-typeset .group-blurb { display: none; }
+.md-typeset h2 {
+  margin: 2rem 0 0;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rb-accent);
+  font-family: var(--rb-mono);
+}
+.md-typeset h2 + p em, .md-typeset h2 + p { font-size: .78rem; color: var(--rb-muted); }
+
+.md-typeset .eyebrow {
+  font: 500 .62rem var(--rb-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rb-accent);
+  margin: 0 0 .5rem;
+}
+.md-typeset .page-title { font-size: 2.4rem; letter-spacing: -0.03em; }
+.md-typeset .lede { font-size: .95rem; color: var(--rb-muted); max-width: 52ch; }
+
+/* --- browse ----------------------------------------------------------- */
+
+.md-typeset .search {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .7rem 0;
+  font: 500 1.1rem var(--rb-display);
+  color: var(--rb-text);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rb-border);
+  margin: 1.4rem 0 1.2rem;
+}
+.md-typeset .search::placeholder { color: var(--rb-muted); opacity: .7; }
+.md-typeset .search:focus { outline: 0; border-bottom-color: var(--rb-brand); }
+
+.md-typeset .facets { display: grid; gap: .5rem; }
+.md-typeset .facet { display: grid; grid-template-columns: 4.6rem 1fr; gap: .5rem; align-items: start; }
+.md-typeset .facet h3 {
+  margin: .2rem 0 0;
+  font: 500 .58rem var(--rb-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+}
+.md-typeset .chips { display: flex; flex-wrap: wrap; gap: .9rem; }
+.md-typeset .chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .3rem;
+  padding: 0;
+  font: 500 .62rem var(--rb-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  transition: color .15s var(--rb-ease), border-color .15s var(--rb-ease);
+}
+.md-typeset .chip:hover { color: var(--rb-brand); }
+.md-typeset .chip[aria-pressed="true"] {
+  color: var(--rb-brand);
+  border-bottom-color: var(--rb-brand);
+}
+.md-typeset .chip-n { font-size: .55rem; opacity: .5; font-variant-numeric: tabular-nums; }
+
+.md-typeset .browse-bar {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  margin: 1.6rem 0 0;
+  padding-top: .9rem;
+  border-top: 1px solid var(--rb-border);
+  font: 500 .6rem var(--rb-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+}
+.md-typeset .reset {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: 500 .6rem var(--rb-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--rb-accent);
+  text-decoration: underline;
+}
+.md-typeset .rows { display: block; }
+.md-typeset .rows .row:last-child { border-bottom: 1px solid var(--rb-border); }
+.md-typeset .row-from {
+  font: 500 .58rem var(--rb-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.md-typeset .row-from a { color: var(--rb-accent); text-decoration: none; }
+.md-typeset .row-from a:hover { text-decoration: underline; }
+.md-typeset .empty { color: var(--rb-muted); padding: 1.6rem 0; font-size: .8rem; }
+.md-typeset mark { background: rgba(72, 95, 102, .18); color: inherit; border-radius: 2px; }
+
+/* --- front page ------------------------------------------------------- */
+/* An index kept by a club, not a product launch: a masthead and the contents.
+   No hero, no buttons, no stats band. home.html drops the sidebars so the
+   content well can run its own width. */
+
+.md-main__inner:has(> .landing) { max-width: none; margin: 0; display: block; }
+
+.landing {
+  font-size: 16px;                 /* undo Material's 125% root for this page */
+  line-height: 1.6;
+  font-family: var(--rb-body);
+  color: var(--rb-text);
+}
+.landing h1, .landing h2 {
+  font-family: var(--rb-display);
+  letter-spacing: -0.02em;
+  color: var(--rb-brand);
+  margin: 0;
+}
+.landing p { margin: 0; }
+.landing a { color: var(--rb-accent); text-decoration: underline; }
+.landing a:hover { color: var(--rb-brand); }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 56px 24px 72px; box-sizing: border-box; }
+
+/* Masthead */
+.masthead { padding-bottom: 32px; }
+.masthead h1 { font-size: 28px; font-weight: 700; }
+.masthead-what {
+  margin-top: 12px !important;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--rb-muted);
+}
+.meta {
+  margin-top: 20px !important;
+  font: 500 11px var(--rb-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+}
+.meta a { color: var(--rb-accent); }
+
+/* Contents */
+.index { border-top: 1px solid var(--rb-border); }
+.idx {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 18px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rb-border);
+  text-decoration: none !important;
+  transition: background .15s var(--rb-ease);
+}
+.idx:hover { background: var(--rb-hover); }
+.idx-n {
+  font: 500 11px var(--rb-mono);
+  letter-spacing: .12em;
+  color: var(--rb-accent);
+  padding-top: 6px;
+}
+.idx-name {
+  display: block;
+  font: 700 24px var(--rb-display);
+  letter-spacing: -0.02em;
+  color: var(--rb-brand);
+  line-height: 1.1;
+}
+.idx-hook { display: block; margin-top: 6px; font-size: 14px; color: var(--rb-muted); }
+.idx-groups { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+.idx-group {
+  font: 500 10px var(--rb-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rb-muted);
+}
+.idx-group i { font-style: normal; margin-left: 5px; opacity: .55; }
+.idx-count {
+  font: 500 11px var(--rb-mono);
+  color: var(--rb-muted);
+  padding-top: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 44rem) {
+  .wrap { padding: 36px 20px 56px; }
+  .idx { grid-template-columns: 28px minmax(0, 1fr) auto; gap: 12px; }
+  .md-typeset .facet { grid-template-columns: 1fr; gap: .25rem; }
+}

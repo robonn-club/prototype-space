@@ -1,0 +1,40 @@
+name: Check links
+
+# The collection is a directory of external links carrying a "dates checked"
+# claim. Without this it rots silently. Weekly, and on demand.
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check every link in the markdown
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 403 and 429 are bot-blocking and rate limiting, not dead pages —
+          # accepting them keeps the issue about links that genuinely broke.
+          args: >-
+            --no-progress
+            --max-retries 2
+            --timeout 20
+            --accept 200,206,403,429
+            "./*.md"
+          fail: false
+
+      - name: Open an issue if anything broke
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Dead links found in prototype-space
+          content-filepath: ./lychee/out.md
+          labels: link-rot

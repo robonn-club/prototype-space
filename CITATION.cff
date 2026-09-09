@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: prototype-space
+message: >-
+  If you use this collection in your work, please cite it as below.
+type: dataset
+abstract: >-
+  An open collection of resources for turning an idea into a working prototype:
+  tools and buildable open-source projects, datasets, hardware and workspace
+  access around Bonn and North Rhine-Westphalia, funding contacts, product
+  compliance references, and routes to publishing finished work.
+authors:
+  - name: "Robonn — Robotics Club, University of Bonn"
+repository-code: "https://github.com/robonn-club/prototype-space"
+url: "https://robonn-club.github.io/prototype-space/"
+license: CC-BY-4.0
+keywords:
+  - robotics
+  - prototyping
+  - open hardware
+  - open data
+  - agricultural robotics
