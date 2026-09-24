@@ -12,6 +12,7 @@ An open collection of what you need to turn an idea into a working prototype; th
 - **[nrw_investor_contacts.md](docs/nrw_investor_contacts.md)** — funding contacts, should the project become a startup.
 - **[certification_resources.md](docs/certification_resources.md)** — what the rules require, if it becomes a product.
 - **[work_exhibit.md](docs/work_exhibit.md)** — competitions, publishing and events: where the finished thing goes.
+- **[builder_helpers.md](docs/builder_helpers.md)** — Bonn itself: what the city is good for, what it costs, and how to arrive.
 
 ## Contributing
 
