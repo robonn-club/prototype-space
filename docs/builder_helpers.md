@@ -1,4 +1,4 @@
-# Bonn for builders
+# Bonn: the city playbook
 
 The city itself as a place to build: what it is good at, what a month costs, and what an arriving
 student has to do first. A playbook for Bonn alone, on the model of the city playbooks at
@@ -116,6 +116,8 @@ contribution, which makes travel across NRW a sunk cost rather than a decision.
 - **[Lamarr Institute](https://lamarr-institute.org/)** — One of Germany's national AI centres, with a site at the University of Bonn and permanent federal and state funding. — `free` · `bonn` · `research`
 - **[Photogrammetry and Robotics](https://www.ipb.uni-bonn.de/)** — The university group working on SLAM, mapping and perception for field robots, whose published code and datasets are usable directly. — `free` · `bonn` · `research`
 - **[Autonomous Intelligent Systems](https://www.ais.uni-bonn.de/)** — The university group behind Bonn's humanoid and mobile manipulation work, and a regular entrant in international robotics competitions. — `free` · `bonn` · `research`
+- **[NimbRo](https://www.nimbro.net/)** — The competition team of the Autonomous Intelligent Systems group, repeatedly RoboCup world champion in humanoid soccer, and the clearest local example of a competition-grade build. — `free` · `bonn` · `research`
+- **[b-it-bots](https://www.h-brs.de/en/a2s/b-it-bots)** — The student RoboCup team of the university of applied sciences in Sankt Augustin, three times world champion in the @Work league and open to students at any level of study. — `free` · `nrw` · `research`
 - **[Institute of Computer Science](https://www.informatik.uni-bonn.de/en)** — The department these groups sit in, and the route to lecture courses, theses and open positions in robotics and AI. — `free` · `bonn` · `research`
 - **[Fraunhofer IAIS](https://www.iais.fraunhofer.de/en.html)** — An applied research institute in machine learning and big data at Sankt Augustin, reachable from Bonn in well under an hour. — `free` · `nrw` · `research`
 - **[DLR](https://www.dlr.de/en)** — The German aerospace centre, whose Köln-Porz site carries robotics and automation work and sits closer to Bonn than to central Köln. — `free` · `nrw` · `research`
@@ -142,6 +144,7 @@ that cannot be verified.
 
 *A small city, which cuts both ways: fewer events, but the same faces twice.*
 
+- **[Robonn](https://discord.gg/sm8nDRntRE)** — The robotics club at Universität Bonn that keeps this guide, whose Discord is where members find teammates and a second opinion on a build. — `free` · `bonn`
 - **[Meetup — Bonn](https://www.meetup.com/cities/de/bonn/)** — The listing where most of the city's technical meetups are announced, and the fastest way to find what runs regularly. — `free` · `bonn`
 - **[AStA Bonn](https://www.asta-bonn.de/)** — The student body, whose registration as a student group is what unlocks rooms, funding and advertising across campus. — `free` · `bonn`
 - **[Lamarr Institute events](https://lamarr-institute.org/events/)** — Talks and public science evenings from the AI institute, and one of the few recurring technical audiences in the city. — `free` · `bonn`

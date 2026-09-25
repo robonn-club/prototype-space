@@ -12,7 +12,7 @@ before budgeting.
 
 ## Start here — applicable to any build
 
-*Three things separate a prototype from a prototype others can reproduce.*
+*Four things separate a prototype from a prototype others can reproduce.*
 
 - **[ROS 2](https://docs.ros.org/)** — The common language of robot software, allowing components to interoperate with everyone else's. — `free`
 - **[Docker](https://docs.docker.com/)** — Freezes the environment so a project still runs on another machine. — `free`
@@ -59,7 +59,7 @@ before budgeting.
 - **[Donkey Car](https://github.com/autorope/donkeycar)** — A self-driving RC car with a large community, and a widely used entry point to autonomous driving. — `under €250`
 - **[ExoMy](https://github.com/esa-prl/ExoMy)** — ESA's six-wheeled Mars rover, printable at home with a full assembly guide, though the repo has been archived since 2021. — `€250–1,000`
 - **[JPL Open Source Rover](https://github.com/nasa-jpl/open-source-rover)** — NASA JPL's scaled-down six-wheel rover, built entirely from off-the-shelf parts. — `€1,000–5,000`
-- **[F1TENTH](https://f1tenth.org/)** — Autonomous racing at 1/10 scale, with teaching modules and real competitions. — `€250–1,000`
+- **[RoboRacer](https://roboracer.ai/)** — Autonomous racing at 1/10 scale, formerly F1TENTH, with teaching modules and real competitions. — `€250–1,000`
 - **[Linorobot2](https://github.com/linorobot/linorobot2)** — A self-assembled ROS 2 robot base, with several drivetrains supported as standard. — `€250–1,000`
 
 ---
@@ -93,7 +93,7 @@ before budgeting.
 - **[OpenCat](https://github.com/PetoiCamp/OpenCat-Quadruped-Robot)** — A modifiable quadruped framework aimed at makers and educators rather than research labs. — `€250–1,000`
 - **[Berkeley Humanoid Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)** — A modular full-body humanoid built from affordable off-the-shelf parts. — `€1,000–5,000`
 - **[InMoov](https://inmoov.fr/)** — The first life-size 3D-printed open humanoid, printable in pieces over months. — `€250–1,000`
-- **[Poppy](https://www.poppy-project.org/en/)** — A modular printed humanoid platform built for education and experimentation. — `over €5,000`
+- **[Poppy](https://github.com/poppy-project/poppy-humanoid)** — A modular printed humanoid platform built for education and experimentation, though the project website has lapsed and the repository has been inactive since 2021. — `over €5,000`
 - **[Open Duck Mini](https://github.com/apirrone/Open_Duck_Mini)** — A small printed bipedal robot capable of stable walking, and one of the lowest-cost routes into legged control. — `€250–1,000`
 - **[Reachy Mini](https://github.com/pollen-robotics/reachy_mini)** — An open-hardware desktop robot from the Reachy lineage, priced for a student rather than a lab. — `€250–1,000`
 - **[Open Dynamic Robot Initiative](https://open-dynamic-robot-initiative.github.io/)** — Open torque-controlled actuators and the Solo quadruped, the research-grade end of open legged hardware. — `€1,000–5,000`
@@ -113,6 +113,11 @@ before budgeting.
 **Or start from a finished build**
 
 - **[Crazyflie](https://github.com/bitcraze/crazyflie-firmware)** — A palm-sized open drone safe enough for indoor flight during early learning. — `€250–1,000`
+
+**Before anything flies outdoors**
+
+- **[dipul](https://www.dipul.de/homepage/en/)** — The federal portal for drone operators in Germany, setting out registration with the LBA, the compulsory liability insurance and the EU certificate of competency. — `free` · `germany`
+- **[dipul map tool](https://maptool-dipul.dfs.de/?language=en)** — The official map of geographical zones where flying is restricted or prohibited, which in Bonn include federal agencies, the UN campus, the Rhine as a federal waterway, and nature reserves. — `free` · `germany`
 
 ---
 
@@ -193,4 +198,4 @@ remains the first debugging tool, ahead of any of these.*
 - **[awesome-weekly-robotics](https://github.com/msadowski/awesome-weekly-robotics)** — Projects from the Weekly Robotics newsletter. — `free`
 - **[build-your-own-x](https://github.com/codecrafters-io/build-your-own-x)** — Rebuilding real systems from scratch, for understanding rather than use. — `free`
 - **[Hackaday.io](https://hackaday.io/)** — Thousands of documented hardware builds at the scale one person completes in a semester. — `free`
-- **[ROS Discourse](https://discourse.ros.org/)** — Where the ROS community answers questions and announces changes. — `free`
+- **[Open Robotics Discourse](https://discourse.openrobotics.org/)** — The forum formerly known as ROS Discourse, where the ROS and Gazebo communities answer questions and announce changes. — `free`

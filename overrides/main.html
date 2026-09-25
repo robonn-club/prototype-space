@@ -1,0 +1,12 @@
+{#
+  Every page says what kind it is in its front matter (build.py writes it):
+  guide, directory, browse or home. The wrapper lets extra.css style a guide
+  page's headings as prose while the directory keeps its compact index look.
+#}
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="kind-{{ page.meta.kind | default('page') }}">
+    {{ super() }}
+  </div>
+{% endblock %}

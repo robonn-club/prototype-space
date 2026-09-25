@@ -1,10 +1,23 @@
 # Contributing
 
-Every entry in this repository follows one shape, and `build.py` parses that shape to generate the
-browsable site. An entry that does not match is not rejected loudly — it silently disappears from
-the site while still looking correct on GitHub. The rules below exist mainly to prevent that.
+The site has two layers, and `build.py` parses both:
 
-## The entry format
+- **the directory** (`docs/`): every resource as one line in a strict shape;
+- **the guide** (`guide/`): the steps, the tracks, the Bonn page and the front page's quick
+  answers, which cite directory entries by name.
+
+The build is strict on purpose. A malformed guide page, a citation to an entry that does not exist,
+a broken link or a broken anchor all fail it, so mistakes surface in the pull request rather than
+on the site.
+
+---
+
+## Adding to the directory
+
+An entry that does not match the format is not rejected loudly: it silently disappears from the
+site while still looking correct on GitHub. The rules below exist mainly to prevent that.
+
+### The entry format
 
 ```markdown
 - **[Name](https://example.org/)** — One sentence on why it matters. — `tag`
@@ -22,7 +35,7 @@ Multiple tags are separated by a middle dot:
 - **[Name](https://example.org/)** — One sentence. — `free` · `bonn`
 ```
 
-## The tag vocabulary
+### The tag vocabulary
 
 Tags are a controlled vocabulary, not free text. `build.py` sorts them into the site's filters:
 
@@ -37,7 +50,7 @@ A tag outside these lists still renders, but it will not become a filter. Extend
 means editing the `COST`, `PLACE`, `LICENCE` and `ACCESS` lists in `build.py` in the same pull
 request.
 
-## The editorial rules
+### The editorial rules
 
 These are what keep the collection trustworthy as it grows.
 
@@ -65,15 +78,69 @@ are fine; postal addresses are not.
 **Mark what is stale.** If a repository is archived or a programme has ended, say so in the
 sentence. A dead project that looks alive costs a reader more than an omission does.
 
+**Renaming an entry is a change to the guide too.** The guide cites entries by name, so a rename
+fails the build until every `[[Old name]]` citation is updated. That is the point.
+
+---
+
+## Editing the guide
+
+The guide answers one question for a student in Bonn: *what is my next step?* Every page is judged
+by whether it answers that faster.
+
+### Voice
+
+The directory is formal; the guide talks to the reader. Second person, plain words, short
+sentences. Each numbered action opens with a bold imperative ("**Order long-lead parts now.**")
+and then says why in a sentence or two. No superlatives, no filler, no marketing.
+
+### Citing the directory
+
+Name tools, places and organisations by citing their directory entry, never by pasting a URL:
+
+```markdown
+Map the room with [[slam_toolbox]], then send [[Nav2]] the goals.
+The [[ULB Bonn group rooms|university library]] has free rooms.     ← different link text
+Bonn's hub, [[DIGITALHUB.DE#funding]], runs accelerators.           ← one file's entry, when a name appears in several
+- [[MakerSpace Bonn e.V.]]                                          ← a list item that is only a citation becomes a full row
+- [[TurtleBot]] — The platform most tutorials assume.               ← a row with your own sentence
+```
+
+If the thing you want to mention is not in the directory, add it there first, under the directory
+rules above.
+
+### Facts that change
+
+Dates, fees, opening arrangements and rules go stale. State the month they were checked ("Dates
+checked 2026-09") and cite the official source. Do not claim that something does not exist in Bonn
+unless you have checked; "no venue rents out space to test robots" is a claim the guide makes only
+because it was checked.
+
+### The shape of the files
+
+- **Steps** (`guide/steps/*.md`): front matter `name`, `situation` (where the reader is when this
+  step applies), `hook`, `goal`, `time`, `cost` and `done` (the finish line). Each step except
+  *after* must contain `{{ tracks }}`, where the build places each track's version of the step.
+  The step order lives in `STEPS` in `build.py`.
+- **Tracks** (`guide/tracks/*.md`): front matter `name`, `does`, `lede`, `first` (the credible first
+  build), `examples`, `budget`, `time` and `hardest`, plus an optional `notice`. The body has
+  exactly six sections, `## Plan` to `## Show`, in step order. Each opens with a one-sentence
+  summary, which also appears in the table on that step's page. Further sections may follow the
+  six, like the drone track's rules. The track order lives in `TRACKS` in `build.py`.
+- **Links between files** use their paths in the repository (`../../docs/datasets.md#slam-and-odometry`,
+  `show.md#pick-a-date`), so they work on GitHub too; the build re-points them for the site.
+
+---
+
 ## Before opening a pull request
 
-- [ ] The link returns 200.
-- [ ] The line matches the entry format, em dashes included.
-- [ ] Tags come from the vocabulary above, or `build.py` is updated in the same change.
-- [ ] One sentence, formal register, no second person.
-- [ ] A licence tag only if the licence is stated at the source.
+- [ ] Every new link returns 200.
+- [ ] Directory entries match the entry format, em dashes included, with tags from the vocabulary.
+- [ ] Directory sentences: one sentence, formal register, no second person.
+- [ ] Guide text: things are cited with `[[Name]]`, and facts that change carry a checked date.
 - [ ] No personal data of any kind.
-- [ ] `python3 build.py` runs and the entry appears in the browse view.
+- [ ] `python3 build.py && mkdocs build --strict && python3 build.py --check` passes.
+- [ ] For a change to the steps, tracks or front page: `tests/journeys.py` passes (see README).
 
 ## Licensing of contributions
 

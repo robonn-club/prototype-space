@@ -17,7 +17,7 @@ consulted before travelling or ordering.
 - **[Dingfabrik Köln](https://dingfabrik.de/)** — Cologne's FabLab, covering 3D printing, laser cutting, soldering, turning and sewing. — `membership` · `köln`
 - **[Stadtbibliothek Köln — 3D printing](https://www.stadt-koeln.de/artikel/08195/index.html)** — The city library lends 3D printers and scanners on completion of its introduction course. — `library card` · `köln`
 - **[Chaosdorf](https://www.chaosdorf.de/)** — Düsseldorf's hackerspace, strongest on electronics and software rather than heavy machines. — `open evenings` · `düsseldorf`
-- **[FabLab Aachen](https://fablab-aachen.de/)** — A long-running FabLab with the usual digital fabrication kit. — `membership` · `aachen`
+- **[FabLab Aachen](https://hci.rwth-aachen.de/fablab)** — A long-running FabLab run by RWTH Aachen's Media Computing Group, with the usual digital fabrication kit. — `membership` · `aachen`
 - **[FabLab@FH Dortmund](https://www.fh-dortmund.de/labore/fablab.php)** — A university FabLab that opens to students and private individuals alike. — `open access` · `dortmund`
 - **[FabLab Münster](https://www.digitalhub.ms/fablab)** — Prototyping lab and makerspace attached to the city's digital hub. — `membership` · `münster`
 - **[Fab Lab Siegen](https://fablab-siegen.de/)** — The open workshop for the south-east corner of the state. — `membership` · `siegen`
@@ -43,7 +43,7 @@ consulted before travelling or ordering.
 
 - **[Aisler](https://aisler.net/)** — European board house built for small prototype runs, with straightforward pricing. — `€€` · `eu`
 - **[Eurocircuits](https://www.eurocircuits.com/)** — Belgian manufacturer offering prototypes and small series with transparent online quotes. — `€€` · `eu`
-- **[WEdirekt](https://www.wedirekt.de/)** — German board house with fast turnaround on prototype orders. — `€€` · `germany`
+- **[WEdirekt](https://www.wedirekt.com/de-de/)** — German board house with fast turnaround on prototype orders. — `€€` · `germany`
 - **[JLCPCB](https://jlcpcb.com/)** — By far the cheapest option, at the cost of longer shipping and customs handling. — `€` · `china`
 
 ---
@@ -52,6 +52,7 @@ consulted before travelling or ordering.
 
 *For parts beyond the reach of a desktop 3D printer: a file is uploaded and the part is posted back.*
 
+- **[HRZ 3D printing service](https://www.hrz.uni-bonn.de/en/all-services/print-scan/3dprinting)** — Uni Bonn's computing centre prints FDM and resin parts free of charge for research and teaching, with student jobs submitted through a member of teaching staff. — `free` · `bonn`
 - **[Craftcloud](https://craftcloud3d.com/)** — Compares prices across more than a hundred printing services in a single request. — `€€` · `münchen`
 - **[Formulor](https://www.formulor.de/)** — Laser cutting from a supplied file, in acrylic, wood and other sheet material. — `€€` · `berlin`
 - **[Schaeffer AG](https://www.schaeffer-ag.de/)** — Custom front panels and enclosures cut and engraved to a supplied drawing. — `€€` · `berlin`

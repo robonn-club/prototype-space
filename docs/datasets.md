@@ -65,7 +65,7 @@ Licences section of [certification_resources.md](certification_resources.md).
 *Terrain, navigation and mission data from robots operating where nobody can service them.*
 
 - **[NASA Planetary Data System](https://pds.nasa.gov/)** — NASA's long-term archive of data returned from planetary missions, covering orbital, landed and robotic acquisitions across discipline nodes.
-- **[ESA Planetary Science Archive](https://archives.esac.esa.int/psa)** — The European counterpart, holding data returned by ESA's planetary missions.
+- **[ESA Planetary Science Archive](https://psa.esa.int/psa/)** — The European counterpart, holding data returned by ESA's planetary missions.
 - **[NASA Open Data Portal](https://data.nasa.gov/)** — The general NASA catalogue, broader than planetary science, and the route to individual mission datasets.
 - **[AI4Mars](https://data.nasa.gov/dataset/ai4mars-a-dataset-for-terrain-aware-autonomous-driving-on-mars)** — Terrain segmentation labels over Curiosity, Opportunity and Spirit imagery across four classes of soil, bedrock, sand and large rock, crowdsourced and reviewed by mission rover planners.
 - **[DLR Robotics and Mechatronics](https://github.com/DLR-RM)** — Open code and data releases from DLR's robotics institute, including planetary-analogue navigation work.
@@ -86,7 +86,6 @@ Licences section of [certification_resources.md](certification_resources.md).
 *Most research data is never packaged as a machine-learning benchmark. These are the routes to it.*
 
 - **[Hugging Face robotics datasets](https://huggingface.co/datasets?task_categories=task_categories:robotics)** — Browsable and filterable, and where most new robot datasets now appear first.
-- **[Papers with Code — robotics](https://paperswithcode.com/datasets?mod=robots)** — Datasets indexed against the papers and benchmarks that use them.
 - **[re3data](https://www.re3data.org/)** — A registry of more than 3,500 research data repositories, filterable by subject and country, for finding the repository before the dataset.
 - **[BonaRes](https://www.bonares.de/)** — The German repository for standardised soil and long-term agricultural field-experiment data, published under FAIR principles.
 - **[data.europa.eu](https://data.europa.eu/en)** — The EU open data portal, covering agriculture, environment and geospatial data published by member states.

@@ -23,12 +23,17 @@ jobs:
         with:
           # 403 and 429 are bot-blocking and rate limiting, not dead pages —
           # accepting them keeps the issue about links that genuinely broke.
+          # The resources live in docs/ and the guide in guide/; both are checked.
+          # Links between the markdown files are checked by the site build, so
+          # only web links are tested here.
           args: >-
             --no-progress
+            --scheme https
+            --scheme http
             --max-retries 2
             --timeout 20
             --accept 200,206,403,429
-            "./*.md"
+            "./*.md" "./docs/*.md" "./guide/**/*.md"
           fail: false
 
       - name: Open an issue if anything broke

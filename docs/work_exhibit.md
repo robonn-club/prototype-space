@@ -13,11 +13,11 @@ Dates checked 2026-09. Each event's own site should be consulted before planning
 
 - **[RoboCup](https://www.robocup.org/)** — The largest competition in intelligent robotics, with the 2027 world championship in Nuremberg, reachable from Bonn by train.
 - **[European RoboCup Association](https://robocupeu.org/)** — Runs the European championship and the national qualifiers that feed into it.
-- **[Field Robot Event](https://www.fieldrobot.com/event/)** — A European contest for autonomous field robots in real crop rows, and the one that sits directly on Robonn's own domain.
+- **[Field Robot Event](https://www.fieldrobotevent.eu/)** — A student contest for autonomous field robots in real crop rows, whose 2026 edition ran in June at the DLG centre in Bernburg, and the one that sits directly on Robonn's own domain.
 - **[ELROB](https://www.elrob.org/)** — A biennial trial of land robots in realistic outdoor scenarios, run in Europe with university teams among the entrants.
 - **[European Robotics League](https://eu-robotics.net/)** — Benchmarks robots against repeatable tasks in real environments rather than a single showpiece run.
 
-For 1/10-scale autonomous racing, see **F1TENTH** in
+For 1/10-scale autonomous racing, see **RoboRacer** (formerly F1TENTH) in
 [prototyping_resources.md](prototyping_resources.md).
 
 ---
@@ -31,7 +31,7 @@ For 1/10-scale autonomous racing, see **F1TENTH** in
 - **[arXiv](https://arxiv.org/)** — The venue for work that becomes a paper, and the basis for citing it afterwards. — `free`
 
 For archiving a release with a DOI, and for announcing to the ROS community, see **Zenodo** and
-**ROS Discourse** in [prototyping_resources.md](prototyping_resources.md).
+**Open Robotics Discourse** in [prototyping_resources.md](prototyping_resources.md).
 
 ---
 
@@ -40,4 +40,5 @@ For archiving a release with a DOI, and for announcing to the ROS community, see
 *Public demonstration exposes failures that controlled testing does not.*
 
 - **[Maker Faire](https://maker-faire.de/)** — Germany's maker festivals, with Hannover the largest and hundreds of exhibitors across robotics and electronics.
-- **[Nacht der Technik Bonn/Rhein-Sieg](https://nacht-der-technik.de/bonn-rhein-sieg/)** — The local technology night, the shortest distance between a finished build and a public audience.
+- **[Maker Faire Ruhr](https://www.makerfaire-ruhr.com/)** — The nearest large maker festival to Bonn, at the DASA in Dortmund, next held on 13–14 March 2027 and reachable on the semester ticket. — `nrw`
+- **[Nacht der Technik Bonn/Rhein-Sieg](https://nacht-der-technik.de/bonn-rhein-sieg/)** — The local technology night, held every two years and next on 1 October 2027, and the shortest distance between a finished build and a public audience. — `bonn`

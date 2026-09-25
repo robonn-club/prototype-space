@@ -27,6 +27,7 @@ rules change; official pages should be checked before travelling.
 ## Somewhere to work on hardware
 
 - **[MakerSpace Bonn](https://www.makerspacebonn.de/)** — An open workshop with open floor area, work benches, and equipment available on loan, on a membership basis. *(Its machines are listed in [nrw_hardware_contacts.md](nrw_hardware_contacts.md).)*
+- **[Datenburg e.V.](https://datenburg.org/)** — Bonn's hackspace and Chaos Computer Club meeting point, with an open evening for guests every Tuesday and no prior knowledge required. — `open evenings` · `bonn`
 
 ---
 
@@ -48,6 +49,10 @@ changes, the practical alternatives are:
 - The **MakerSpace Bonn floor** — a working environment where machine and robot testing is expected.
 - A **quiet campus courtyard or corridor** outside teaching hours, for anything requiring more
   distance than a room allows.
+
+For trials in real crop rows the nearest site is the university's own:
+
+- **[Campus Klein-Altendorf](https://www.aussenlabore.uni-bonn.de/cka/de)** — Uni Bonn's outdoor laboratory between Rheinbach and Meckenheim, where PhenoRob runs its central field experiments; a research site rather than a public one, reached through the groups that work there. — `bonn`
 
 Securing a dedicated workshop space is a Year 2 goal on the club roadmap. Until then this section
 documents a gap rather than a set of options.

@@ -1,15 +1,15 @@
-site_name: prototype
+site_name: Prototype Space
 site_description: >-
-  An open collection of what you need to turn an idea into a working prototype:
-  the tools, and the places around Bonn where you can actually make things.
+  A step-by-step guide for students in Bonn, from a robot idea to a credible first build:
+  what to do next, when it is done, and where in Bonn to do it.
 site_url: https://robonn-club.github.io/prototype-space/
 repo_url: https://github.com/robonn-club/prototype-space
 repo_name: robonn-club/prototype-space
 edit_uri: ""
-copyright: Robonn · the robotics club at Universität Bonn
+copyright: Robonn · the robotics club at Universität Bonn · content CC BY 4.0
 
-# The markdown at the repo root is the source of truth; build.py stages a copy
-# here along with the generated landing page and browse view.
+# guide/ and docs/ at the repo root are the source of truth; build.py stages
+# the site here, generating the front page, overviews and the browse view.
 docs_dir: _build/docs
 site_dir: _build/site
 
@@ -23,18 +23,23 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: custom      # colours come from extra.css
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Switch to dark
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom      # colours come from extra.css
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Switch to light
   features:
-    # Tabs across the top instead of a left sidebar: this is a directory, not
-    # a manual, and the eight pages fit in one row.
+    # Tabs across the top for the four ways in; the sidebar then lists the
+    # pages of the current tab, which on a step page is the route itself.
     - navigation.tabs
+    - navigation.indexes
     - navigation.instant
     - navigation.tracking
     - navigation.top
@@ -42,20 +47,52 @@ theme:
     - search.highlight
     - content.tooltips
 
+# Pages take their titles from the front matter build.py writes, so the labels
+# live in one place. build.py fails if a page is built but not listed here.
 nav:
   - Home: index.md
-  - Build: build.md
-  - Make: make.md
-  - Grow: grow.md
+  - Steps:
+      - steps/index.md
+      - steps/plan.md
+      - steps/simulate.md
+      - steps/parts.md
+      - steps/build.md
+      - steps/test.md
+      - steps/show.md
+      - steps/after.md
+  - Tracks:
+      - tracks/index.md
+      - tracks/mobile.md
+      - tracks/arm.md
+      - tracks/field.md
+      - tracks/drone.md
+      - tracks/legged.md
+      - tracks/sensor.md
+      - tracks/software.md
   - Bonn: bonn.md
-  - Browse: browse.md
+  - Directory:
+      - directory/index.md
+      - browse.md
+      - directory/tools.md
+      - directory/ai.md
+      - directory/datasets.md
+      - directory/hardware.md
+      - directory/spaces.md
+      - directory/showing.md
+      - directory/funding.md
+      - directory/compliance.md
+      - directory/city.md
 
+# A link to a heading that does not exist fails the strict build.
+validation:
+  anchors: warn
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
   - meta
+  - tables
   - toc:
       permalink: true
       permalink_title: Link to this section
@@ -69,10 +106,14 @@ extra_css:
   - assets/extra.css
 extra_javascript:
   - assets/browse.js
+  - assets/guide.js
 
 extra:
   generator: false
   social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/sm8nDRntRE
+      name: Robonn on Discord
     - icon: fontawesome/brands/github
       link: https://github.com/robonn-club
       name: Robonn on GitHub
