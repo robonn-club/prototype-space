@@ -198,9 +198,76 @@ def site_search(v: Visit) -> str:
     return f"{results.count()} search results, MakerSpace among them"
 
 
+def open_tab(v: Visit, name: str, url: str) -> None:
+    """Use the top tabs on a laptop and the menu drawer on a phone."""
+    if v.page.viewport_size["width"] < 1220:
+        v.page.locator("label.md-header__button[for='__drawer']").click()
+        v.page.wait_for_timeout(300)
+        v.click(v.page.locator(".md-nav--primary").get_by_role("link", name=name).first, url)
+    else:
+        v.click(v.page.locator(".md-tabs").get_by_role("link", name=name), url)
+
+
+def first_listing(v: Visit):
+    return v.page.locator("article.ev:not([hidden])").first
+
+
+# The event journeys check behaviour, not particular listings, so they keep
+# passing as events come and go.
+
+def learn_ai(v: Visit) -> str:
+    """'Where can I learn something about AI in Bonn?'"""
+    v.home()
+    open_tab(v, "Events", r"/events/$")
+    card = v.page.locator("article.ev", has_text=re.compile(r"\b(AI|KI)\b")).first
+    card.scroll_into_view_if_needed()
+    v.on_screen(card.locator(".ev-facts"))
+    button = card.locator("a.ev-btn")
+    expect(button).to_have_text("Page")
+    expect(button).to_have_attribute("href", card.locator("h3 a").get_attribute("href"))
+    return f"events tab: {card.locator('h3').inner_text()}"
+
+
+def robotics_event(v: Visit) -> str:
+    """'Is there any robotics event coming up?' via the front page's what's-on list."""
+    v.home()
+    v.click(v.page.locator(".block-more a", has_text="workshops, meetups"), r"/events/$")
+    card = v.page.locator("article.ev", has_text=re.compile("robot", re.I)).first
+    card.scroll_into_view_if_needed()
+    v.on_screen(card.locator("a.ev-btn"))
+    return f"front page, then the events page: {card.locator('h3').inner_text()}"
+
+
+def step_to_workshop(v: Visit) -> str:
+    """'It works in simulation; where can I learn to use the machines?'"""
+    v.home()
+    v.click(finder(v, "It works in simulation"), r"/steps/parts/$")
+    item = v.page.locator(".whatson .wo").first
+    item.scroll_into_view_if_needed()
+    target = item.get_attribute("href").split("#")[1]
+    v.click(item, rf"/events/#{target}$")
+    v.on_screen(v.page.locator(f"article#{target}"))
+    return f"step 3's events, then the listing #{target}"
+
+
+def browse_events(v: Visit) -> str:
+    """'What's on?' The first listing and its link are on the first screen, three to a row
+    on a laptop and one to a row on a phone."""
+    v.home()
+    open_tab(v, "Events", r"/events/$")
+    cards = v.page.locator("#upcoming ~ .ev-grid").first.locator("article.ev")
+    v.on_screen(cards.first.locator("a.ev-btn"))
+    tops = [round(cards.nth(i).bounding_box()["y"]) for i in range(min(4, cards.count()))]
+    per_row = sum(1 for y in tops if y == tops[0])
+    expected = 3 if v.page.viewport_size["width"] > 1200 else 1
+    if per_row != expected:
+        raise AssertionError(f"{per_row} cards in the first row, expected {expected}")
+    return f"first listing on screen, {per_row} per row"
+
+
 JOURNEYS = [idea_to_plan, sim_to_parts, parts_to_build, bench_to_test, works_to_show,
             credible_to_after, where_to_print, drone_rules, money, track_first, find_dataset,
-            site_search]
+            site_search, learn_ai, robotics_event, step_to_workshop, browse_events]
 
 # Old addresses that must still land on the same content.
 REDIRECTS = [

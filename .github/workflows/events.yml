@@ -1,0 +1,54 @@
+name: Events review
+
+# Once a week: which listings in guide/events.yml have ended, start soon and
+# need a second look, or have not been checked for a while. The site already
+# hides ended events every night; this is the reminder to tidy the file and to
+# look for new ones. Anything to do opens (or updates) one issue.
+on:
+  schedule:
+    - cron: "0 7 * * 0"     # Sundays, 07:00 UTC, an hour after the event finder
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Review the listings
+        id: review
+        # Exit code 1 means "there is something to do"; 2 means the file is broken.
+        run: |
+          set +e
+          python3 build.py --events > review.md
+          code=$?
+          cat review.md
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          [ "$code" -le 1 ]
+
+      - name: Find this week's open review issue
+        if: steps.review.outputs.code == '1'
+        id: open
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --label events-review --state open --json number --jq '.[0].number // empty')
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the review issue
+        if: steps.review.outputs.code == '1'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Events review
+          content-filepath: ./review.md
+          labels: events-review
+          issue-number: ${{ steps.open.outputs.number }}

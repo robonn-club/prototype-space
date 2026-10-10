@@ -54,6 +54,13 @@ camera, and outside the city's many no-fly zones. Start indoors.
 
 [The drone rules](tracks/drone.md#before-you-fly)
 
+## Where can I learn AI, robotics or founding skills?
+
+Workshops, meetups and hackathons from enaCom, H-BRS, the Lamarr Institute, DIGITALHUB.DE and
+MakerSpace Bonn, each checked against the organiser's page.
+
+[Workshops and events](events/index.md)
+
 ## When should it be done?
 
 Pick a date: Maker Faire Ruhr in Dortmund on 13–14 March 2027, or the Nacht der Technik in Bonn

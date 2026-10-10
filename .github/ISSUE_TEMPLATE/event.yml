@@ -1,0 +1,61 @@
+name: Suggest an event
+description: A workshop, meetup, hackathon, course or programme in or around Bonn that helps students build a prototype.
+title: "Event: "
+labels: [event-suggestion]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! A maintainer checks every suggestion against the organiser's own page before it goes on the site, so the most useful thing you can give is that link.
+        Please give no personal contact details: no names, email addresses or phone numbers.
+  - type: input
+    id: link
+    attributes:
+      label: Organiser's page for the event
+      description: The organiser's own page, not a newsletter, aggregator or social post.
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: What is it called?
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Is it a single event or a recurring programme?
+      options:
+        - A single event with a date
+        - A recurring programme (weekly, monthly, each semester)
+    validations:
+      required: true
+  - type: input
+    id: when
+    attributes:
+      label: When?
+      placeholder: "Wed 18 Nov 2026, 17:00–19:00 / every second Wednesday"
+  - type: input
+    id: where
+    attributes:
+      label: Where? (venue and city, or online)
+      placeholder: "DIGITALHUB.DE CITYHUB, Bonn"
+  - type: checkboxes
+    id: topics
+    attributes:
+      label: Topics
+      options:
+        - label: AI
+        - label: Robotics
+        - label: Making (CAD, 3D printing, electronics)
+        - label: Software and data
+        - label: Design thinking
+        - label: Founding
+        - label: Patents and IP
+        - label: A place to show a build
+  - type: textarea
+    id: details
+    attributes:
+      label: Cost, who can join, language, how to register
+      description: Whatever the organiser's page says. Leave out what it does not say.

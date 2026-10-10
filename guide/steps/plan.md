@@ -54,6 +54,12 @@ The first build that makes sense for each kind of machine:
   centre's free [[HRZ 3D printing service]], for one, takes student jobs only through teaching
   staff.
 
+## Workshops and events
+
+Coming up in Bonn and online, for this step:
+
+{{ events }}
+
 ## Traps
 
 - **Building a platform instead of a demo.** A general-purpose base that could do anything,

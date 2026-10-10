@@ -5,7 +5,8 @@ first build in Bonn, standing on a directory of checked resources.
 Two layers of markdown, both edited by hand and reviewed in pull requests:
 
     guide/   the route: six steps, seven tracks (one per kind of machine),
-             the Bonn page and the front page's quick answers
+             the Bonn page, the front page's quick answers, and events.yml,
+             the workshops and events (see events.py)
     docs/    the directory: every resource as one line, in one strict shape
              - **[Name](url)** — one sentence on why it matters — `tag` · `tag`
 
@@ -19,10 +20,13 @@ browse view are all generated from those two layers: nothing is typed twice.
     python3 build.py --serve    stage, then start the dev server
     python3 build.py --check    after `mkdocs build`: every internal link and
                                 anchor in _build/site must resolve
+    python3 build.py --events   the weekly events review: what to delete,
+                                recheck or fill in (exit 1 if anything)
 """
 
 from __future__ import annotations
 
+import datetime as dt
 import html
 import json
 import posixpath
@@ -38,6 +42,8 @@ from urllib.parse import unquote, urlsplit
 import yaml
 from markdown.extensions.toc import slugify as _slugify
 
+import events as ev
+
 ROOT = Path(__file__).parent.resolve()
 DIRECTORY = ROOT / "docs"
 GUIDE = ROOT / "guide"
@@ -47,6 +53,11 @@ SITE = STAGE / "site"
 REPO = "https://github.com/robonn-club/prototype-space"
 DISCORD = "https://discord.gg/sm8nDRntRE"
 JOIN = "https://tally.so/r/Pd8Zae"
+EVENTS_FILE = GUIDE / "events.yml"
+EVENTS_PAGE = "events/index.md"
+
+# The listings, loaded once per build for the day the build runs on.
+CTX: dict = {"events": [], "sources": [], "day": None}
 
 PROBLEMS: list[str] = []
 
@@ -535,15 +546,23 @@ def bar_html(step: Step) -> str:
     return f'<ol class="bar">{items}</ol>'
 
 
-def dates_html(page: str, step: Step, refs: Refs) -> str:
-    """Events to build towards, one row each: a date, what and where, and who it suits."""
-    rows = "".join(
-        f'<div class="date"><p class="d-when">{esc(d["when"])}</p>'
-        f'<p class="d-what">{inline_html(d["what"], step.path, page, refs)}'
-        f'<span class="d-where">{esc(d["where"])}</span></p>'
-        f'<p class="d-good">{esc(d["good"])}</p></div>'
-        for d in step.meta.get("dates", []))
-    return f'<div class="dates">{rows}</div>'
+def events_list(page: str, topics=None, *, regions=("bonn", "online"), limit: int = 3,
+                recurring: bool = True, empty: str = "") -> str:
+    """A short list of upcoming listings that link into the events page."""
+    link = href(page, EVENTS_PAGE)
+    items = ev.whatson(CTX["events"], CTX["day"], link, topics=topics, regions=regions,
+                       limit=limit, recurring=recurring)
+    if not items:
+        return f'<p class="wo-empty">{empty or "Nothing on the calendar for this right now."}</p>'
+    return f'<ol class="whatson">{items}</ol>'
+
+
+def step_events(page: str, step: Step) -> str:
+    topics = ev.STEP_TOPICS.get(step.slug, [])
+    names = " and ".join(ev.TOPICS[t].lower() if t != "ai" else "AI" for t in topics)
+    more = href(page, EVENTS_PAGE).removesuffix("/") + "/?topic=" + ",".join(topics)
+    return (events_list(page, topics, empty=f"No {names} events are listed right now.")
+            + f'<p class="wo-more"><a href="{esc(more)}">All {names} workshops and events →</a></p>')
 
 
 def track_table(page: str, step: Step, tracks: list[Track]) -> str:
@@ -569,7 +588,8 @@ def stage_step(step: Step, steps: list[Step], tracks: list[Track], refs: Refs) -
     route = [s for s in steps if s.n]
     body = step.body.replace("{{ tracks }}", f"\n{track_table(page, step, tracks)}\n")
     body = body.replace("{{ bar }}", f"\n{bar_html(step)}\n")
-    body = body.replace("{{ dates }}", f"\n{dates_html(page, step, refs)}\n")
+    body = body.replace("{{ dates }}", f"\n{ev.showcase(CTX['events'], CTX['day'], href(page, EVENTS_PAGE), page)}\n")
+    body = body.replace("{{ events }}", f"\n{step_events(page, step)}\n")
     body = guide_markdown(body, step.path, page, refs)
 
     info = [("You're here if", esc(step.meta["situation"]))]
@@ -644,6 +664,7 @@ def stage_bonn(refs: Refs, facts_table: dict[str, str], moved: dict[str, str]) -
     meta, body = front_matter(path.read_text(encoding="utf-8"), repo_path(path))
     table = "".join(f"<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>" for k, v in facts_table.items())
     body = body.replace("{{ glance }}", f'\n<dl class="glance">{table}</dl>\n')
+    body = body.replace("{{ events }}", "\n" + events_list(page, limit=5, recurring=False) + "\n")
     body = guide_markdown(body, path, page, refs)
     sections = re.findall(r"^## (.+?)\s*\{#([\w-]+)\}", body, flags=re.M)
     jump = "".join(f'<a href="#{i}">{esc(t)}</a>' for t, i in sections)
@@ -711,6 +732,20 @@ def stage_tracks_index(tracks: list[Track]) -> str:
               "project's own bill of materials decides the real figure.</p>")
     return page_file({"title": "Tracks", "description": "Seven tracks from idea to first build, "
                       "one per kind of machine.", "kind": "guide", "hide": ["toc"]}, body)
+
+
+def stage_events() -> str:
+    """Workshops and events: upcoming events, regular meetings and further afield."""
+    live = ev.upcoming(CTX["events"], CTX["day"])
+    dated = sum(not e.recurring for e in live)
+    body = ev.page(CTX["events"], CTX["sources"], CTX["day"], ics_href="cal/", repo=REPO)
+    head = page_head(f"Events · {dated} upcoming · {len(live) - dated} regular meetings",
+                     "Workshops and events",
+                     "Workshops, meetups and hackathons around Bonn.")
+    return page_file({"title": "Workshops and events", "description": "Upcoming workshops, "
+                      "meetups, hackathons and courses in Bonn for students building a prototype.",
+                      "kind": "guide", "hide": ["navigation", "toc"]},
+                     f"{head}\n\n{body}\n\n{improve(EVENTS_FILE)}")
 
 
 def stage_directory_index(entries: list[dict]) -> str:
@@ -854,6 +889,15 @@ def home(steps: list[Step], tracks: list[Track], answers, facts_table: dict[str,
     <h2 id="tracks-h">Pick a track: the tools and parts for your kind of machine</h2>
   </div>
   <div class="track-grid">{cards}</div>
+</section>
+
+<section class="wrap block" aria-labelledby="events-h">
+  <div class="block-head">
+    <p class="eyebrow-rule">What's on</p>
+    <h2 id="events-h">Workshops and events coming up in Bonn</h2>
+  </div>
+  {events_list(page, limit=4, recurring=False)}
+  <p class="block-more"><a href="{href(page, EVENTS_PAGE)}">All {len(ev.upcoming(CTX["events"], CTX["day"]))} workshops, meetups and programmes →</a></p>
 </section>
 
 <section class="wrap block" aria-labelledby="answers-h">
@@ -1033,6 +1077,11 @@ def main() -> int:
     steps = load_steps()
     tracks = load_tracks(steps)
     answers = parse_answers(GUIDE / "answers.md")
+    day = ev.today()
+    listings, sources, trouble = ev.load(EVENTS_FILE, day)
+    for message in trouble:
+        problem(f"guide/{message}")
+    CTX.update(events=listings, sources=sources, day=day)
     if PROBLEMS:                                # staging malformed files only adds noise
         for message in dict.fromkeys(PROBLEMS):
             print(f"error: {message}", file=sys.stderr)
@@ -1052,6 +1101,7 @@ def main() -> int:
     pages["steps/index.md"] = stage_steps_index(steps)
     pages["tracks/index.md"] = stage_tracks_index(tracks)
     pages["bonn.md"] = stage_bonn(refs, facts_table, moved)
+    pages[EVENTS_PAGE] = stage_events()
     for source in SOURCES:
         pages[source.page] = stage_directory(source, refs)
     pages["directory/index.md"] = stage_directory_index(entries)
@@ -1078,6 +1128,13 @@ def main() -> int:
         (DOCS / old).mkdir()
         (DOCS / old / "index.html").write_text(redirect_stub(old), encoding="utf-8")
 
+    # One calendar file with every upcoming date, linked at the foot of the events page.
+    cal = DOCS / "events" / "cal"
+    cal.mkdir(parents=True)
+    dated = [e for e in ev.upcoming(listings, day) if e.next_date()]
+    now = dt.datetime.now(dt.timezone.utc)
+    (cal / "events.ics").write_bytes(ev.ics(dated, day, now, REPO).encode("utf-8"))
+
     assets = DOCS / "assets"
     shutil.copytree(ROOT / "site_assets", assets)
     public = [{k: v for k, v in e.items() if k != "desc_md"} for e in entries]
@@ -1092,12 +1149,30 @@ def main() -> int:
           f"({uncited} links reachable only through the directory)")
     for source in SOURCES:
         print(f"      {source.count:>4}  {source.file}")
+    live = ev.upcoming(listings, day)
+    print(f"  events     {sum(not e.recurring for e in live)} dated and {sum(e.recurring for e in live)} "
+          f"recurring listings live on {day}, {sum(e.past(day) for e in listings)} past (hidden)")
     return 0
+
+
+def events_review() -> int:
+    """Print the weekly events review; exit 1 when there is something to do."""
+    day = ev.today()
+    listings, sources, trouble = ev.load(EVENTS_FILE, day)
+    if trouble:
+        for message in trouble:
+            print(f"error: guide/{message}", file=sys.stderr)
+        return 2
+    text, actionable = ev.report(listings, sources, day)
+    print(text)
+    return 1 if actionable else 0
 
 
 if __name__ == "__main__":
     if "--check" in sys.argv:
         sys.exit(check_site())
+    if "--events" in sys.argv:
+        sys.exit(events_review())
     code = main()
     if code == 0 and "--serve" in sys.argv:
         code = subprocess.call(["mkdocs", "serve"], cwd=ROOT)

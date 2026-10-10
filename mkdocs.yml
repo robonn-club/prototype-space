@@ -70,6 +70,7 @@ nav:
       - tracks/sensor.md
       - tracks/software.md
   - Bonn: bonn.md
+  - Events: events/index.md
   - Directory:
       - directory/index.md
       - browse.md

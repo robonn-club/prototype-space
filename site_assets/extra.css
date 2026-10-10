@@ -993,3 +993,110 @@ body, .md-typeset { font-family: var(--rb-body); }
   }
   .md-typeset .can-fold .facets:not(.is-open) { display: none; }
 }
+
+/* --- workshops and events ---------------------------------------------------
+   A grid of plain cards, three to a row on a laptop: the date, what it is and
+   who runs it, when and where, the cost if the organiser states one, the
+   language, and one link to the event's own page. */
+
+:root { --rb-warn: #8A5A10; --rb-warn-bg: #FBF1DE; }
+[data-md-color-scheme="slate"] { --rb-warn: #E3B25F; --rb-warn-bg: #33291A; }
+
+.md-typeset .ev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+  margin: .6rem 0 1.4rem;
+}
+.md-typeset article.ev {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: .9rem 1rem 1rem;
+  border: 1px solid var(--rb-border);
+  border-radius: var(--rb-radius);
+  background: var(--rb-surface);
+  scroll-margin-top: 4rem;
+}
+.md-typeset article.ev:target { box-shadow: 0 0 0 2px var(--rb-brand); }
+.md-typeset .ev-top { display: flex; align-items: flex-start; gap: .7rem; }
+.md-typeset .ev-when {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 3.2rem;
+  padding: .35rem .3rem .4rem;
+  border-radius: var(--rb-radius);
+  background: var(--rb-bg);
+  text-align: center;
+}
+.md-typeset .ev-day { font: 700 1.1rem/1.05 var(--rb-display); color: var(--rb-brand); font-variant-numeric: tabular-nums; }
+.md-typeset .ev-mon { font: 600 .55rem var(--rb-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rb-brand); }
+.md-typeset .ev-wd { font: 500 .5rem var(--rb-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--rb-muted); }
+.md-typeset .ev-meta { margin: .1rem 0 0; font-size: .64rem; line-height: 1.5; color: var(--rb-muted); }
+.md-typeset h3.ev-title { margin: 0; font: 650 .88rem/1.3 var(--rb-display); letter-spacing: -0.01em; }
+.md-typeset h3.ev-title a { color: var(--rb-brand); text-decoration: none; }
+.md-typeset h3.ev-title a:hover { color: var(--rb-accent); text-decoration: underline; }
+.md-typeset .ev-sum { margin: 0; font-size: .72rem; line-height: 1.5; color: var(--rb-text); }
+.md-typeset .ev-flag {
+  align-self: flex-start;
+  margin: 0;
+  padding: .1rem .5rem;
+  border-radius: var(--rb-radius);
+  font-size: .64rem;
+  font-weight: 700;
+  color: var(--rb-warn);
+  background: var(--rb-warn-bg);
+}
+.md-typeset .ev-flag-closed { color: var(--rb-muted); background: var(--rb-raised); font-weight: 600; }
+.md-typeset .ev-facts { display: grid; gap: .3rem; margin: .1rem 0 0; }
+.md-typeset .ev-facts div { display: grid; grid-template-columns: 4.3rem minmax(0, 1fr); gap: .5rem; align-items: baseline; }
+.md-typeset .ev-facts dt { font: 500 .5rem var(--rb-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--rb-muted); }
+.md-typeset .ev-facts dd { margin: 0; font-size: .68rem; line-height: 1.45; color: var(--rb-text); }
+.md-typeset .ev-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: .32rem .9rem;
+  border-radius: var(--rb-radius);
+  background: var(--rb-brand);
+  font-size: .66rem;
+  font-weight: 600;
+  color: var(--rb-bg) !important;
+  text-decoration: none !important;
+}
+.md-typeset .ev-btn:hover { opacity: .9; }
+.md-typeset .ev-none { font-size: .74rem; color: var(--rb-muted); }
+.md-typeset .ev-sources { font-size: .7rem; columns: 2; }
+.md-typeset .ev-origin { font-size: .7rem; color: var(--rb-muted); }
+
+/* "What's on": short lists on the front page, the steps and the Bonn page. */
+[dir] .md-typeset .whatson, .landing .whatson { margin: .6em 0 .4em; padding: 0; list-style: none; border-top: 1px solid var(--rb-border); }
+[dir] .md-typeset .whatson li, .landing .whatson li { margin: 0; border-bottom: 1px solid var(--rb-border); }
+.md-typeset .wo, .landing .wo {
+  display: grid;
+  grid-template-columns: 8em minmax(0, 1fr);
+  gap: .15em 1.2em;
+  padding: .7em .4em;
+  color: var(--rb-text) !important;
+  text-decoration: none !important;
+}
+.md-typeset .whatson { font-size: .78rem; }
+.md-typeset .wo:hover, .landing .wo:hover { background: var(--rb-hover); }
+.wo-date { grid-row: span 2; font: 600 .82em/1.4 var(--rb-mono); color: var(--rb-accent); }
+.wo-title { font: 650 1em/1.35 var(--rb-display); color: var(--rb-brand); }
+.wo:hover .wo-title { color: var(--rb-accent); }
+.wo-meta { font-size: .86em; line-height: 1.45; color: var(--rb-muted); }
+.md-typeset .wo-more { margin: .5rem 0 0; font-size: .74rem; font-weight: 600; }
+.md-typeset .wo-empty { margin: .4rem 0; font-size: .74rem; color: var(--rb-muted); }
+.landing .whatson { margin-top: 24px; font-size: 16px; }
+
+@media (max-width: 60rem) {
+  .md-typeset .ev-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 44rem) {
+  .md-typeset .ev-grid { grid-template-columns: 1fr; }
+  .md-typeset .ev-sources { columns: 1; }
+  .md-typeset .wo, .landing .wo { grid-template-columns: 1fr; }
+  .wo-date { grid-row: auto; }
+}

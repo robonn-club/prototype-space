@@ -42,6 +42,12 @@ why. The cure is order. Connect one subsystem at a time, and test each before ad
 - **Electronics and software questions.** Bring the board to [[Datenburg e.V.|Datenburg]]'s open
   evening on a Tuesday, or post the plot in the [[Robonn]] Discord.
 
+## Workshops and events
+
+Coming up in Bonn and online, for this step:
+
+{{ events }}
+
 ## Traps
 
 - **Wiring everything, then switching on.** When it fails, nothing tells you which of twenty

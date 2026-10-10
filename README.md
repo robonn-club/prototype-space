@@ -19,6 +19,9 @@ resources, each with one sentence on why it matters.
 - **[Building in Bonn](guide/bonn.md)**: where to make, work, test and buy, who to ask, and where
   money comes from, including what the city does not have.
 - **[Quick answers](guide/answers.md)**: the questions everyone asks first, shown on the front page.
+- **[Workshops and events](guide/events.yml)**: upcoming workshops, meetups, hackathons, courses and
+  recurring programmes in Bonn on AI, robotics, making, design thinking, founding and patents, each
+  copied from the organiser's page with the date it was checked.
 
 **The directory** (`docs/`) holds every resource the guide cites, and more:
 
@@ -52,6 +55,14 @@ python3 build.py && mkdocs build --strict && python3 build.py --check
 search view, and fails on a broken citation, a malformed guide file or a page missing from the nav.
 `mkdocs build --strict` fails on a broken link or anchor in the markdown. `build.py --check` then
 crawls the built site and fails on any internal link or anchor that does not resolve.
+
+The events list keeps itself current: every build hides events that have ended (compared with
+today in Bonn), and the deploy workflow rebuilds every night. Every Sunday, `find_events.py` reads
+the organisers' own calendars and opens a pull request with the new events for someone to review
+and merge, and an hour later a workflow opens an issue with what to delete, recheck or fill in.
+Run them yourself with `python3 find_events.py` (shows what it would propose) and
+`python3 build.py --events`, and their rules with `python3 -m unittest discover tests`. See
+[Adding an event](CONTRIBUTING.md#adding-an-event).
 
 To check that visitors can still find their next step, run the journey tests against a local copy
 (needs `pip install playwright && playwright install chromium`):

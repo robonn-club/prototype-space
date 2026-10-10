@@ -46,6 +46,12 @@ and AI features under the [[EU regulatory framework for AI|AI Act]]. Check the l
 everything you built on: [[Ultralytics YOLO]]'s AGPL, for example, requires a commercial
 agreement before a product using it can be sold.
 
+## Workshops and events
+
+Founding and patent events coming up in Bonn and online:
+
+{{ events }}
+
 ## Go deeper
 
 - [Funding in Bonn and NRW](../../docs/nrw_investor_contacts.md)

@@ -47,6 +47,12 @@ No venue in Bonn rents out space for driving or flying robots, so testing is imp
 
 {{ tracks }}
 
+## Workshops and events
+
+Coming up in Bonn and online, for this step:
+
+{{ events }}
+
 ## Traps
 
 - **Testing only where it already works.** The same corner, a full battery, good light. The demo

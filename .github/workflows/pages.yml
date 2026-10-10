@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Every night, so a workshop that ended yesterday is gone from the site
+  # without anyone editing guide/events.yml (build.py compares with today).
+  schedule:
+    - cron: "15 3 * * *"   # 03:15 UTC, 04:15 or 05:15 in Bonn
 
 # Set Settings → Pages → Source to "GitHub Actions" once, and this takes over.
 permissions:
@@ -25,6 +29,8 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Test the events rules (expiry, deadlines, checks)
+        run: python3 -m unittest discover tests
       - name: Stage the guide and directory, and resolve every citation
         run: python3 build.py
       - name: Build

@@ -8,3 +8,6 @@ Thumbs.db
 
 # Generated site
 _build/
+
+# Python bytecode from build.py, events.py and the tests
+__pycache__/

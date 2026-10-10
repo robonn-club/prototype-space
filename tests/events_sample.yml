@@ -1,0 +1,91 @@
+# A frozen copy of a few listings from guide/events.yml (October 2026), so the tests
+# in test_events.py keep working after the real entries are deleted as they expire.
+
+events:
+
+  - title: KI Summit Bonn
+    organiser: KI Summit Bonn (meetup group)
+    topics: [ai]
+    format: meetup
+    region: bonn
+    date: 2026-10-15
+    time: "18:00–21:00"
+    place: SprintEins office, Bonn
+    cost: not stated
+    who: Anyone interested in AI
+    language: German
+    register: https://sprinteins.com/insights/kisb-15102026
+    source: https://www.meetup.com/bonner-ki-meetup/events/315679785/
+    checked: 2026-10-10
+    summary: Two talks on agentic engineering, then food, drinks and Bonn's AI community.
+    note: An RSVP on Meetup is not enough; register through the organisers' form.
+
+  - title: Green Bonn Hackathon 2026
+    organiser: Transfer Center enaCom, Start-up-Manufaktur and Stadtwerke Bonn
+    topics: [software, founding]
+    format: hackathon
+    region: bonn
+    date: 2026-11-16
+    end: 2026-11-22
+    deadline: 2026-10-29
+    time: Kick-off Monday 16 November, 16:00; work phase online, with desks at the hub
+    place: DIGITALHUB.DE CITYHUB, Bonn, and online
+    cost: Free
+    who: Open to everyone; teams of up to 5, or apply alone and be matched
+    language: German
+    register: https://www.eventbrite.de/e/green-bonn-hackathon-2026-tickets-2001168199956
+    source: https://www.h-brs.de/de/gruenden/termin/greenbonn-26
+    checked: 2026-10-10
+    summary: Build a digital prototype that makes Stadtwerke Bonn's environmental data usable; prizes of €1,500, €1,000 and €500.
+    note: Places are limited; apply with a short motivation and wait for a confirmed place.
+
+  - title: Offene Tür (open evening)
+    organiser: MakerSpace Bonn e.V.
+    topics: [making]
+    format: open house
+    region: bonn
+    recurring: Usually once a week; in October 2026 on Mondays, 18:00–21:00
+    next: [2026-10-12, 2026-10-19]
+    place: MakerSpace Bonn
+    cost: Free tour
+    who: Anyone interested, guests and members
+    language: not stated (site in German)
+    register: No registration needed; check the calendar on the day
+    source: https://www.makerspacebonn.de/index.php/der-verein/uns-kennenlernen
+    checked: 2026-10-10
+    summary: A free tour of the 3D printers, laser cutters, CNC and metal shop, and the way in to membership.
+
+  - title: Offener Burgabend (open evening)
+    organiser: Datenburg e.V.
+    topics: [making, software]
+    format: open house
+    region: bonn
+    recurring: Every Tuesday from 18:00
+    weekday: tuesday
+    place: Datenburg, Bonner Altstadt
+    cost: not stated
+    who: Everyone; no prior knowledge needed
+    language: not stated (site in German)
+    register: No registration needed
+    source: https://datenburg.org/
+    checked: 2026-10-10
+    summary: Bonn's hackspace opens its doors weekly for projects, electronics and software questions.
+    note: Its Raspberry Pi workshop is not offered for the time being.
+
+  - title: Gründungsstammtisch (founders' meetup)
+    organiser: Start-up-Manufaktur (H-BRS), enaCom and DIGITALHUB.DE
+    topics: [founding]
+    format: meetup
+    region: bonn
+    recurring: Second Wednesday of the month, from 17:00
+    next: [2026-10-14, 2026-12-09, 2027-01-13, 2027-02-10, 2027-03-10]
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: Free
+    who: Students and anyone curious about founding
+    language: German and English
+    register: https://www.eventbrite.de/e/grundungsstammtisch-tickets-1119012088279
+    source: https://www.h-brs.de/de/gruenden/termin/stammtisch
+    more: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events
+    checked: 2026-10-10
+    summary: Meet founders and people with ideas, find a co-founder, and ask experts; drinks are free.
+    note: The dates listed are from enaCom's calendar; no meetup is listed there for November.

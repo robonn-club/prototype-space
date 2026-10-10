@@ -1,0 +1,54 @@
+name: Find events
+
+# Every Sunday: read the organisers' own calendars and event pages (the sources
+# with a `calendar` or `reader` in guide/events.yml), and open or update one pull
+# request that adds the new events. Nothing reaches the site until someone has
+# reviewed and merged it. Proposals deleted in review are remembered in
+# guide/events-seen.yml and not proposed again.
+#
+# Needs, once: Settings → Actions → General → Workflow permissions →
+# "Allow GitHub Actions to create and approve pull requests".
+on:
+  schedule:
+    - cron: "0 6 * * 0"     # Sundays, 06:00 UTC (07:00 or 08:00 in Bonn)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Look for new events
+        run: python3 find_events.py --write --report proposals.md
+
+      # A pull request opened by this workflow does not start the deploy checks,
+      # so they run here: proposals that would break the site never become a PR.
+      - name: Check the site still builds with them
+        run: |
+          python3 -m unittest discover tests
+          python3 build.py
+          mkdocs build --strict
+          python3 build.py --check
+
+      - name: Open or update the pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bot/new-events
+          delete-branch: true
+          add-paths: |
+            guide/events.yml
+            guide/events-seen.yml
+          commit-message: "Add: events proposed by the weekly finder"
+          title: New events to review
+          body-path: proposals.md
+          labels: new-events

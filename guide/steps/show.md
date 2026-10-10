@@ -21,27 +21,6 @@ bar:
     text: Code, bill of materials with prices, CAD and wiring, in a public repository with a licence.
   - title: You can say where it fails
     text: The known limits, and what version two would change.
-dates:
-  - when: 13–14 Mar 2027
-    what: "[[Maker Faire Ruhr]]"
-    where: Dortmund
-    good: Any track, in front of a public audience, on the semester ticket.
-  - when: 15–21 Jun 2027
-    what: "[[RoboCup]] world championship"
-    where: Nuremberg
-    good: Seeing competition-grade robots up close.
-  - when: 2027, date to come
-    what: "[[Field Robot Event]]"
-    where: "2026 edition: Bernburg, 16–18 Jun"
-    good: Field robots in real crop rows.
-  - when: 21–22 Aug 2027
-    what: "[[Maker Faire]] Hannover"
-    where: Hannover
-    good: Any track, at Germany's largest maker festival.
-  - when: 1 Oct 2027
-    what: "[[Nacht der Technik Bonn/Rhein-Sieg]]"
-    where: Bonn and the Rhein-Sieg district
-    good: Any track, in front of a local audience.
 ---
 
 A first build is credible when someone who wasn't in the room believes it works, and could
@@ -73,7 +52,9 @@ check. That takes three things: proof, a repository, and an audience.
 
 ## Pick a date
 
-Dates checked 2026-09. Confirm on each event's own site before planning around it.
+Fairs and competitions to build towards. Each links to its listing among the
+[workshops and events](../events/index.md), which says when the date was checked; confirm on the
+organiser's site before planning around it.
 
 {{ dates }}
 

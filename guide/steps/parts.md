@@ -50,6 +50,12 @@ that is new.
 - **When Bonn lacks a machine.** [[Dingfabrik Köln]] is a train ride away on the semester
   ticket.
 
+## Workshops and events
+
+Coming up in Bonn and online, for this step:
+
+{{ events }}
+
 ## Traps
 
 - **Buying before the simulation says what you need.** The motor you like may not lift the arm

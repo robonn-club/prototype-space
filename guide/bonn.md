@@ -89,14 +89,14 @@ Until then, a first build is paid for by choosing a cheap track. The
 [sensor rig](tracks/sensor.md) and [software](tracks/software.md) tracks cost little or
 nothing.
 
-## Dates {#dates}
+## What's on {#dates}
 
-Within reach on the semester ticket, and worth building towards:
+The next workshops, meetups and talks in Bonn and online:
 
-- **13–14 March 2027**: [[Maker Faire Ruhr]] in Dortmund.
-- **1 October 2027**: [[Nacht der Technik Bonn/Rhein-Sieg]], the local technology night.
+{{ events }}
 
-[Every date, with what each is good for](steps/show.md#pick-a-date).
+[All workshops and events](events/index.md), including regular meetings such as the
+MakerSpace open evenings, and the fairs to [show a build at](steps/show.md#pick-a-date).
 
 ## Living here {#living}
 

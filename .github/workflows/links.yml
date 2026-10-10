@@ -33,7 +33,7 @@ jobs:
             --max-retries 2
             --timeout 20
             --accept 200,206,403,429
-            "./*.md" "./docs/*.md" "./guide/**/*.md"
+            "./*.md" "./docs/*.md" "./guide/**/*.md" "./guide/*.yml"
           fail: false
 
       - name: Open an issue if anything broke

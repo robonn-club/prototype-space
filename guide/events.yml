@@ -1,0 +1,505 @@
+# Workshops and events for students in Bonn who are building a prototype.
+#
+# Every entry comes from the organiser's own page, linked as `source`, and says
+# when it was last checked there. Search results and aggregators are not
+# sources: twice while this list was first researched they gave a wrong date.
+#
+# You do not need to delete past events: build.py hides a dated event the day
+# after it ends (Bonn time), and the site rebuilds every night. Every Sunday the
+# event finder (find_events.py) proposes new listings from the organisers' own
+# calendars in a pull request, and the events review (`python3 build.py --events`)
+# lists what to delete, recheck or fill in. CONTRIBUTING.md, "Adding an event",
+# explains every field.
+#
+# Values: write what the organiser's page says. Use `not stated` when you
+# checked and the page does not say, and leave a field empty (~) when you have
+# not checked yet. No street addresses, email addresses, phone numbers or
+# names of people: give the venue and the city, and link the organiser's page.
+
+events:
+
+  # --- dated events, in Bonn, Sankt Augustin and online ----------------------
+
+  - title: KI Summit Bonn
+    organiser: KI Summit Bonn (meetup group)
+    topics: [ai]
+    format: meetup
+    region: bonn
+    date: 2026-10-15
+    time: "18:00–21:00"
+    place: SprintEins office, Bonn
+    cost: not stated
+    who: Anyone interested in AI
+    language: German
+    register: https://sprinteins.com/insights/kisb-15102026
+    source: https://www.meetup.com/bonner-ki-meetup/events/315679785/
+    checked: 2026-10-10
+    summary: Two talks on agentic engineering, then food, drinks and Bonn's AI community.
+    note: An RSVP on Meetup is not enough; register through the organisers' form.
+
+  - title: H-BRS Start-up Cup final
+    organiser: Start-up-Manufaktur, Hochschule Bonn-Rhein-Sieg
+    topics: [founding]
+    format: pitch night
+    region: bonn
+    date: 2026-10-15
+    time: "17:00–20:00"
+    place: H-BRS campus, Sankt Augustin (lecture hall B118)
+    cost: Free
+    who: Open audience
+    language: German
+    register: https://www.h-brs.de/de/anmeldung-cupfinale26
+    source: https://www.h-brs.de/de/gruenden/termin/finale-2026
+    checked: 2026-10-10
+    summary: Five founding teams pitch live for €2,250 in prizes, and the audience votes for one of them.
+
+  - title: "Start-up financing: understanding your options"
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [founding]
+    format: talk
+    region: online
+    date: 2026-10-22
+    time: "12:00–13:30"
+    place: Online
+    cost: not stated
+    who: Students
+    language: English
+    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration-start-up_financing_10_26
+    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-financing-understanding-your-financing-options-10-26
+    checked: 2026-10-10
+    summary: From self-funding to grants and investors, how a start-up idea gets paid for.
+
+  - title: Start-up Career Forum 2026
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [founding]
+    format: fair
+    region: bonn
+    date: 2026-10-27
+    time: "17:00–19:00"
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: Free
+    who: Students
+    language: not stated
+    register: https://www.eventbrite.de/e/startup-karriere-forum-tickets-1985362739398
+    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-karriere-forum-2026
+    checked: 2026-10-10
+    summary: Regional start-ups present themselves, from co-founder matching to internships.
+
+  - title: "Embodied AI Meetup: Founders × Talents"
+    organiser: Lamarr Institute
+    topics: [robotics, ai, founding]
+    format: meetup
+    region: bonn
+    date: 2026-10-28
+    time: "17:00–19:00"
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: not stated
+    who: Designed for master's and PhD students and postdocs; 60 places
+    language: not stated (page in English)
+    register: https://events.lamarr-institute.org/event/499/
+    source: https://lamarr-institute.org/events/embodied-ai-meet-up-founders-x-talents/
+    checked: 2026-10-10
+    summary: Regional robotics start-ups talk about hardware bottlenecks and real business cases, then networking.
+
+  - title: Impact Pitch Night 2026
+    organiser: Start-up-Manufaktur (H-BRS), enaCom and DIGITALHUB.DE
+    topics: [founding]
+    format: pitch night
+    region: bonn
+    date: 2026-11-03
+    time: "17:00–20:00"
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: Free
+    who: Anyone interested
+    language: not stated (page in German)
+    register: https://www.eventbrite.de/e/impact-pitch-night-2026-changemakers-on-stage-tickets-1999370777818
+    source: https://www.h-brs.de/de/gruenden/termin/impact-pitch-26
+    checked: 2026-10-10
+    summary: Five teams from the region pitch social and environmental start-up ideas to a jury and the audience.
+
+  - title: "Founders Talk: founding as a career path"
+    organiser: Start-up-Manufaktur, Hochschule Bonn-Rhein-Sieg
+    topics: [founding]
+    format: talk
+    region: bonn
+    date: 2026-11-04
+    time: "11:00–12:00"
+    place: H-BRS campus library, Sankt Augustin (Flex room)
+    cost: not stated
+    who: not stated
+    language: German
+    register: No registration needed
+    source: https://www.h-brs.de/de/gruenden/termin/founders-talk
+    checked: 2026-10-10
+    summary: Two founders, one with a start-up from an H-BRS research project, on what founding really looks like.
+
+  - title: Ideas Competition 2026
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [founding]
+    format: competition
+    region: bonn
+    date: 2026-12-01
+    deadline: 2026-11-08
+    time: Final on 1 December; submit an idea sketch by 8 November
+    place: Online submission; final at the university's Rektorat, Bonn
+    cost: Free
+    who: Members of Uni Bonn (students, doctoral researchers, staff, alumni up to 3 years); a team needs one member
+    language: German or English
+    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/anmeldung-ideenwettbewerb_2026
+    source: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/ideenwettbewerb-der-uni-bonn-2026
+    checked: 2026-10-10
+    summary: Submit a short idea sketch; the best ideas win up to €5,000 and pitch at the final.
+
+  - title: "Erfolgreich selbständig: Existenzgründung (mit KI-Unterstützung)"
+    organiser: Volkshochschule Bonn
+    topics: [founding, ai]
+    format: course
+    region: bonn
+    date: 2026-11-14
+    end: 2026-11-15
+    time: "09:30–17:00 both days"
+    place: VHS Bonn, city centre
+    cost: "€109.40, reduced €82.28"
+    who: Adults; 6 to 8 places
+    language: German
+    register: https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html?action%5B148%5D=course&courseId=484-C-N5004
+    source: https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html?action%5B148%5D=course&courseId=484-C-N5004
+    checked: 2026-10-10
+    summary: A weekend from business plan and market to financing, legal form and taxes, using your own idea.
+
+  - title: Green Bonn Hackathon 2026
+    organiser: Transfer Center enaCom, Start-up-Manufaktur and Stadtwerke Bonn
+    topics: [software, founding]
+    format: hackathon
+    region: bonn
+    date: 2026-11-16
+    end: 2026-11-22
+    deadline: 2026-10-29
+    time: Kick-off Monday 16 November, 16:00; work phase online, with desks at the hub
+    place: DIGITALHUB.DE CITYHUB, Bonn, and online
+    cost: Free
+    who: Open to everyone; teams of up to 5, or apply alone and be matched
+    language: German
+    register: https://www.eventbrite.de/e/green-bonn-hackathon-2026-tickets-2001168199956
+    source: https://www.h-brs.de/de/gruenden/termin/greenbonn-26
+    checked: 2026-10-10
+    summary: Build a digital prototype that makes Stadtwerke Bonn's environmental data usable; prizes of €1,500, €1,000 and €500.
+    note: Places are limited; apply with a short motivation and wait for a confirmed place.
+
+  - title: "Starting a business in Germany: a guide for non-EU nationals"
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [founding]
+    format: talk
+    region: online
+    date: 2026-11-17
+    time: "17:00–18:00"
+    place: Online
+    cost: not stated
+    who: Students from outside the EU
+    language: English
+    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration_non-eu-nationals_11_26
+    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/starting-a-business-in-germany-a-guide-for-non-eu-nationals-1
+    checked: 2026-10-10
+    summary: What a non-EU student needs to know before and while working self-employed or founding in Germany.
+
+  - title: KI Meetup
+    organiser: DIGITALHUB.DE
+    topics: [ai, founding]
+    format: meetup
+    region: bonn
+    date: 2026-11-18
+    time: "17:00–19:00"
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: From €7
+    who: Anyone interested
+    language: German
+    register: https://digitaler-hub-region-bonn-ag-fzrg.vivenushop.com/event/ki-meetup-n5d4ni
+    source: https://www.digitalhub.de/en/eventkalender-intern/ki-meetup-3
+    checked: 2026-10-10
+    summary: A keynote and three or four AI start-up pitches, then networking over pizza.
+
+  - title: Female Founders Meetup
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [founding]
+    format: meetup
+    region: bonn
+    date: 2026-11-24
+    time: "10:30–13:00"
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: not stated (the page mentions a free breakfast)
+    who: Women interested in founding
+    language: not stated (page in German)
+    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/anmeldung-female_founders_meetup_nov
+    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/female-founders-meetup-1
+    checked: 2026-10-10
+    summary: A relaxed breakfast for women from different fields who are founding or thinking about it.
+
+  - title: From an AI idea to the first prototype
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [ai, design]
+    format: workshop
+    region: bonn
+    date: 2027-02-18
+    time: "10:00–14:00"
+    place: Transfer Center enaCom, Bonn
+    cost: not stated
+    who: Students
+    language: English
+    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/from-an-ai-idea-to-the-first-prototype
+    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/from-an-ai-idea-to-the-first-prototype
+    checked: 2026-10-10
+    summary: Turn an idea into a testable AI hypothesis, pick a feasible technology, and leave with a validation plan and risk checklist.
+
+  - title: From use case to business model
+    organiser: Transfer Center enaCom, Uni Bonn
+    topics: [founding, design]
+    format: workshop
+    region: bonn
+    date: 2027-02-25
+    time: "09:00–12:00"
+    place: Transfer Center enaCom, Bonn
+    cost: not stated
+    who: Students
+    language: English
+    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/from-use-case-to-business-model
+    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/from-use-case-to-business-model
+    checked: 2026-10-10
+    summary: Connect customer needs and your value proposition into a business model, using your own start-up idea.
+
+  # --- recurring programmes ---------------------------------------------------
+
+  - title: Offene Tür (open evening)
+    organiser: MakerSpace Bonn e.V.
+    topics: [making]
+    format: open house
+    region: bonn
+    recurring: Usually once a week; in October 2026 on Mondays, 18:00–21:00
+    next: [2026-10-12, 2026-10-19]
+    place: MakerSpace Bonn
+    cost: Free tour
+    who: Anyone interested, guests and members
+    language: not stated (site in German)
+    register: No registration needed; check the calendar on the day
+    source: https://www.makerspacebonn.de/index.php/der-verein/uns-kennenlernen
+    checked: 2026-10-10
+    summary: A free tour of the 3D printers, laser cutters, CNC and metal shop, and the way in to membership.
+
+  - title: Offener Burgabend (open evening)
+    organiser: Datenburg e.V.
+    topics: [making, software]
+    format: open house
+    region: bonn
+    recurring: Every Tuesday from 18:00
+    weekday: tuesday
+    place: Datenburg, Bonner Altstadt
+    cost: not stated
+    who: Everyone; no prior knowledge needed
+    language: not stated (site in German)
+    register: No registration needed
+    source: https://datenburg.org/
+    checked: 2026-10-10
+    summary: Bonn's hackspace opens its doors weekly for projects, electronics and software questions.
+    note: Its Raspberry Pi workshop is not offered for the time being.
+
+  - title: Gründungsstammtisch (founders' meetup)
+    organiser: Start-up-Manufaktur (H-BRS), enaCom and DIGITALHUB.DE
+    topics: [founding]
+    format: meetup
+    region: bonn
+    recurring: Second Wednesday of the month, from 17:00
+    next: [2026-10-14, 2026-12-09, 2027-01-13, 2027-02-10, 2027-03-10]
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: Free
+    who: Students and anyone curious about founding
+    language: German and English
+    register: https://www.eventbrite.de/e/grundungsstammtisch-tickets-1119012088279
+    source: https://www.h-brs.de/de/gruenden/termin/stammtisch
+    more: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events
+    checked: 2026-10-10
+    summary: Meet founders and people with ideas, find a co-founder, and ask experts; drinks are free.
+    note: The dates listed are from enaCom's calendar; no meetup is listed there for November.
+
+  - title: b-it-bots team meetings
+    organiser: b-it-bots, Hochschule Bonn-Rhein-Sieg
+    topics: [robotics, ai, software]
+    format: team
+    region: bonn
+    recurring: Fridays at 13:00 by default; times vary by semester
+    place: H-BRS (room C069)
+    cost: not stated
+    who: All students interested in robots, at any level of study
+    language: not stated
+    register: Contact the team through its page
+    source: https://www.h-brs.de/en/a2s/b-it-bots
+    checked: 2026-10-10
+    summary: Join a RoboCup team working with ROS, Python and C++ on home and factory robots.
+
+  - title: "Brown-bag seminars: IP and copyright basics"
+    organiser: Deutsches Patent- und Markenamt (DPMA)
+    topics: [ip]
+    format: webinar
+    region: online
+    recurring: First Thursday of the month, 12:00–13:00; patents and IP alternate with copyright
+    next: [2026-11-05, 2026-12-03]
+    place: Online (Webex)
+    cost: Free
+    who: not stated
+    language: German
+    register: By email, as described on the organiser's page
+    source: https://www.dpma.de/dpma/veranstaltungen/workshops/index.html
+    checked: 2026-10-10
+    summary: A lunchtime hour on what can be protected and how; 5 November covers patents and IP rights, 3 December copyright.
+
+  - title: Patent consultation
+    organiser: IHK Bonn/Rhein-Sieg
+    topics: [ip]
+    format: consultation
+    region: bonn
+    recurring: A few dates a year (2026 in February, June, September and December), 16:00–17:00
+    next: [2026-12-01]
+    place: By phone
+    cost: Free; about 15 minutes each
+    who: Aimed at businesses; the page does not say whether students can book
+    language: German
+    register: https://event.ihk-bonn.de/b?p=patentberatunghfc
+    source: https://www.ihk-bonn.de/innovation-und-umwelt/innovation/gewerbliche-schutzrechte
+    checked: 2026-10-10
+    summary: Fifteen minutes with a patent attorney for a first answer on protecting an invention.
+
+  # --- further afield: events to show a build at -----------------------------
+  # Dates were checked for the show step; cost and eligibility not yet.
+
+  - title: Maker Faire Ruhr
+    organiser: Maker Faire Ruhr
+    topics: [showcase, making]
+    format: fair
+    region: further
+    date: 2027-03-13
+    end: 2027-03-14
+    time: ~
+    place: DASA, Dortmund
+    cost: ~
+    who: ~
+    language: ~
+    register: Ask the organisers about exhibiting
+    source: https://www.makerfaire-ruhr.com/
+    checked: 2026-09-25
+    summary: The nearest large maker festival to Bonn, reachable on the semester ticket.
+
+  - title: RoboCup 2027 world championship
+    organiser: RoboCup Federation, hosted by RoboCup Germany
+    topics: [showcase, robotics]
+    format: competition
+    region: further
+    date: 2027-06-15
+    end: 2027-06-21
+    time: ~
+    place: Messe Nürnberg, Nuremberg
+    cost: ~
+    who: ~
+    language: ~
+    register: Leagues need registered teams; visitors see the organiser's page
+    source: https://robocup.de/en/events/world-cup-2027
+    checked: 2026-10-10
+    summary: Competition-grade robots up close, the first world championship in Germany since 2016.
+
+  - title: Maker Faire Hannover
+    organiser: Maker Faire
+    topics: [showcase, making]
+    format: fair
+    region: further
+    date: 2027-08-21
+    end: 2027-08-22
+    time: ~
+    place: Hannover Congress Centrum, Hannover
+    cost: ~
+    who: ~
+    language: ~
+    register: ~
+    source: https://maker-faire.de/alle-maker-faires/
+    checked: 2026-09-25
+    summary: Germany's largest maker festival.
+
+  - title: Nacht der Technik Bonn/Rhein-Sieg
+    organiser: Nacht der Technik
+    topics: [showcase]
+    format: fair
+    region: bonn
+    date: 2027-10-01
+    time: "18:00–24:00"
+    place: Venues across Bonn and the Rhein-Sieg district
+    cost: ~
+    who: ~
+    language: ~
+    register: ~
+    source: https://nacht-der-technik.de/bonn-rhein-sieg/
+    checked: 2026-09-25
+    summary: The local technology night, held every two years, and the shortest way to a public audience.
+
+  - title: Field Robot Event
+    organiser: Field Robot Event
+    topics: [showcase, robotics]
+    format: competition
+    region: further
+    recurring: Once a year; the 2026 edition ran 16–18 June in Bernburg, and the 2027 date is not announced
+    place: Changes each year
+    cost: ~
+    who: Student teams
+    language: ~
+    register: ~
+    source: https://www.fieldrobotevent.eu/
+    checked: 2026-09-25
+    summary: The student contest for autonomous robots in real crop rows.
+
+# Where to look for new listings. The events page shows this list as Resources,
+# and the weekly review links it. Every Sunday the event finder (find_events.py)
+# reads each source that has a `calendar` (an iCal address) or a `reader` (one
+# of the page readers in find_events.py: hbrs, digitalhub; enacom also reads each
+# event's own page) and proposes what is new in a pull request. `organiser` is
+# the name its proposals carry.
+sources:
+  - name: Transfer Center enaCom, Uni Bonn
+    url: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events
+    note: founding, AI and IP workshops through the semester
+    calendar: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/@@event_listing_ical
+    reader: enacom
+  - name: Start-up-Manufaktur, H-BRS
+    url: https://www.h-brs.de/de/gruenden/events
+    note: founding events in Sankt Augustin and at DIGITALHUB.DE
+    reader: hbrs
+    organiser: Start-up-Manufaktur, Hochschule Bonn-Rhein-Sieg
+  - name: Lamarr Institute
+    url: https://lamarr-institute.org/current/events/
+    note: AI events; most are for researchers, some meetups are open to students
+    calendar: https://events.lamarr-institute.org/export/categ/11.ics?from=today
+  - name: DIGITALHUB.DE
+    url: https://www.digitalhub.de/en/events/eventkalender-intern
+    note: meetups and pitch nights at the main station
+    reader: digitalhub
+  - name: MakerSpace Bonn e.V.
+    url: https://www.makerspacebonn.de/
+    note: news posts announce workshops; the calendar shows open evenings
+    calendar: https://tickets.makerspacebonn.de/msb/events/ical/?locale=de
+  - name: Datenburg e.V.
+    url: https://datenburg.org/
+  - name: KI Summit Bonn (Meetup)
+    url: https://www.meetup.com/bonner-ki-meetup/events/
+    calendar: https://www.meetup.com/bonner-ki-meetup/events/ical/
+    organiser: KI Summit Bonn (meetup group)
+  - name: IHK Bonn/Rhein-Sieg, patent consultation
+    url: https://www.ihk-bonn.de/innovation-und-umwelt/innovation/gewerbliche-schutzrechte
+  - name: DPMA, workshops and seminars
+    url: https://www.dpma.de/dpma/veranstaltungen/workshops/index.html
+  - name: Volkshochschule Bonn
+    url: https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html
+    note: founding and AI courses; no electronics or 3D-printing courses this term
+
+# The event finder never proposes an event whose title contains one of these
+# (not case-sensitive). Add a word when the same kind of unsuitable event keeps
+# coming back; a single unsuitable proposal can simply be deleted.
+finder_skip:
+  - game design
+  - board game
+  - brettspiel
+  - spiel 20
+  - change management

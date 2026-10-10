@@ -45,6 +45,12 @@ how much computing) before any money is spent.
 - **Data from Bonn itself.** For field and plant work, start with the university's own
   datasets: the [[IPB dataset index]] and [[PhenoBench]].
 
+## Workshops and events
+
+Coming up in Bonn and online, for this step:
+
+{{ events }}
+
 ## Traps
 
 - **Perfecting the simulation.** It only has to be good enough to choose the parts and prove
