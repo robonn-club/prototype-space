@@ -272,8 +272,7 @@ def read_hbrs_event(page: str, url: str, organiser: str, source: str) -> Found |
     return Found(title=tidy(text_of(title.group(1))), url=url, start=start, end=end,
                  location=box.get("Standort", ""), description=description,
                  organiser=organiser, source=source,
-                 details={"cost": "Free" if free else "not stated",
-                          "language": "not stated (page in German)"})
+                 details={"cost": "Free" if free else "not stated"})
 
 
 def read_digitalhub(page: str, base: str, organiser: str, source: str) -> list[Found]:
@@ -434,14 +433,14 @@ def entry(item: Found, day: dt.date) -> dict:
         price = d.get("Admission price", "")
         out["cost"] = "Free" if re.search(r"free|kostenlos|frei", price, re.IGNORECASE) else (price or "not stated")
         langs = [LANGUAGES[w] for w in re.findall(r"[A-Za-z]+", d.get("Languages", "").lower()) if w in LANGUAGES]
-        out["language"] = " and ".join(dict.fromkeys(langs)) if langs else "not stated"
+        if langs:
+            out["language"] = " and ".join(dict.fromkeys(langs))
         if d.get("Target groups"):
             out["who"] = d["Target groups"]
         if d.get("Registration/Ticket", "").startswith("http"):
             out["register"] = clean_url(d["Registration/Ticket"])
     else:
         out["cost"] = d.get("cost")
-        out["language"] = d.get("language")
     out["source"] = item.url
     out["checked"] = day
     out["summary"] = summary(item)
@@ -542,8 +541,8 @@ def report(proposals, reasons, log, day: dt.date) -> str:
         out += [f"The weekly finder read the organisers' own calendars and proposes **{len(proposals)} new "
                 f"listing{'s' if len(proposals) != 1 else ''}**, added to the end of the events list in "
                 "`guide/events.yml`.", "",
-                "**To review:** open each event's page, rewrite the summary in plain English, check place, "
-                "cost and language, and delete any proposal that does not suit students building a "
+                "**To review:** open each event's page, rewrite the summary in plain English, check place "
+                "and cost, and delete any proposal that does not suit students building a "
                 "prototype. Then merge. A deleted proposal is remembered and not proposed again.", "",
                 f"## Proposed ({len(proposals)})", ""]
         for item, data in proposals:
@@ -585,7 +584,7 @@ def main(argv: list[str]) -> int:
 
     if "--write" in argv and proposals:
         block = (f"  # --- proposed by the weekly finder on {day.isoformat()}: check each against its page,\n"
-                 f"  # rewrite the summary, fix place, cost and language, delete what does not fit ---\n\n"
+                 f"  # rewrite the summary, fix place and cost, delete what does not fit ---\n\n"
                  + "\n".join(as_yaml(data) for _, data in proposals))
         EVENTS.write_text(insert(EVENTS.read_text(encoding="utf-8"), block), encoding="utf-8")
         keep = [s for s in seen if dt.date.fromisoformat(str(s["date"])) >= day - dt.timedelta(days=31)]

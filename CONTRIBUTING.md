@@ -141,8 +141,8 @@ Workshops, meetups, hackathons, courses and regular meetings live in
 front page, the steps and the Bonn page, step 6's dates, and a calendar file.
 
 Each card on the events page is kept short: the date, the format and organiser, the title and
-summary, when, where, the cost if the organiser states one, the language, and one *Page* button to
-the `source`. Everything else stays on the organiser's page.
+summary, when, where, the cost if the organiser states one, and one *Page* button to the `source`.
+Everything else stays on the organiser's page.
 
 ### What belongs here
 
@@ -161,8 +161,7 @@ wrong date.
 
 **Write what the page says.** `cost: not stated` when you checked and the page says nothing, and
 `cost: ~` when you have not checked; either way the card leaves the cost out, and the weekly review
-lists every `~` to fill in. `language` works the same, but the card shows "Not stated" or "Not
-checked yet". Never guess.
+lists every `~` to fill in. Never guess.
 
 **Venue and city, no addresses or people.** `place: DIGITALHUB.DE CITYHUB, Bonn (at the main
 station)`, not a street. No names, email addresses or phone numbers; if registration is by email,
@@ -183,10 +182,10 @@ looks like a postal address or contact details.
 | `recurring` | A programme instead of a date: `recurring: Every Tuesday from 18:00`. |
 | `next` | Optional, with `recurring`: the dates the organiser has announced, `[2026-12-09, 2027-01-13]`. |
 | `weekday` | Optional, with `recurring`, only for strictly weekly programmes: `weekday: tuesday`. |
-| `place`, `cost`, `language` | As above. |
+| `place`, `cost` | As above. |
 | `source` | The organiser's page for this event; the card's *Page* button opens it. |
 | `summary` | One sentence on what a student gets from it, ending with a full stop. |
-| `who`, `register`, `note`, `more` | Optional, and not shown on the card: who may take part, the registration link, one thing to know, a second organiser page. Worth recording for maintainers; `register` also goes into the calendar file. |
+| `who`, `language`, `register`, `note`, `more` | Optional, and not shown on the card: who may take part, the language, the registration link, one thing to know, a second organiser page. Worth recording for maintainers; they also go into the calendar file. |
 
 ### Keeping it current
 
@@ -209,7 +208,7 @@ in `guide/events.yml`:
 
 - rewrite the `summary` as one plain English sentence (the finder copies the first usable sentence
   from the organiser, often in German);
-- check `place`, `cost` and `language`, filling in any `~` you can;
+- check `place` and `cost`, filling in any `~` you can;
 - delete any proposal that does not suit students building a prototype. It will not be proposed
   again: everything the finder proposes is remembered in `guide/events-seen.yml`, which the
   finder keeps itself;

@@ -51,11 +51,11 @@ STEP_TOPICS = {
     "after": ["founding", "ip"],
 }
 
-REQUIRED = {"title", "organiser", "topics", "format", "region", "place", "cost", "language",
-            "source", "checked", "summary"}
+REQUIRED = {"title", "organiser", "topics", "format", "region", "place", "cost", "source",
+            "checked", "summary"}
 # Kept in the data for the calendar file and for maintainers, not shown on the cards.
 OPTIONAL = {"date", "end", "deadline", "time", "recurring", "next", "weekday", "note", "more",
-            "who", "register"}
+            "who", "register", "language"}
 MAY_BE_EMPTY = {"cost", "who", "language", "register", "time"}   # ~ means "not checked yet"
 
 # How old a check may get before the review asks for another look.
@@ -291,12 +291,11 @@ def date_block(e: Event) -> str:
 
 
 def card(e: Event, day: dt.date) -> str:
-    """One listing: when, what, where, the cost if the organiser states one, the language,
-    and a link to the event's own page. Everything else is on that page."""
+    """One listing: when, what, where, the cost if the organiser states one, and a link
+    to the event's own page. Everything else is on that page."""
     facts = [("When", when_text(e, day)), ("Where", e["place"])]
     if known(e["cost"]):
         facts.append(("Cost", e["cost"]))
-    facts.append(("Language", value(e["language"])))
     rows = "".join(f"<div><dt>{k}</dt><dd>{esc(v)}</dd></div>" for k, v in facts)
     flag = ""
     if e["deadline"]:
@@ -424,8 +423,9 @@ def ics(items: list[Event], day: dt.date, now: dt.datetime, site: str) -> str:
                 last = d if e.recurring else e.finish
                 lines += [f"DTSTART;VALUE=DATE:{d.strftime('%Y%m%d')}",
                           f"DTEND;VALUE=DATE:{(last + dt.timedelta(days=1)).strftime('%Y%m%d')}"]
-            about = [e["summary"], f"Cost: {value(e['cost'])}", f"Who: {value(e['who'])}",
-                     f"Language: {value(e['language'])}"]
+            about = [e["summary"]] + [f"{label}: {e[key]}" for label, key in
+                                      (("Cost", "cost"), ("Who", "who"), ("Language", "language"))
+                                      if known(e[key])]
             if e["register"]:
                 about.append(f"Register: {e['register']}")
             about.append(f"Check before you go: {e['source']}")
@@ -466,11 +466,11 @@ def report(events: list[Event], sources: list[dict], day: dt.date) -> tuple[str,
                      "The site already says applications are closed; remove `deadline` if the page now says otherwise.",
                      [at(e) for e in closed]))
     def unchecked(e: Event) -> list[str]:
-        return [k for k in ("time", "cost", "language") if k in e.data and e[k] is None]
+        return [k for k in ("time", "cost") if k in e.data and e[k] is None]
 
     gaps = [e for e in events if not e.past(day) and unchecked(e)]
     sections.append(("Fill in: fields not checked yet",
-                     "A missing cost is left off the card; a missing language shows as \"Not checked yet\".",
+                     "A missing cost is left off the card, and a missing time leaves just the date.",
                      [f"{at(e)}: {', '.join(unchecked(e))}" for e in gaps]))
 
     live = upcoming(events, day)

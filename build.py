@@ -741,7 +741,7 @@ def stage_events() -> str:
     body = ev.page(CTX["events"], CTX["sources"], CTX["day"], ics_href="cal/", repo=REPO)
     head = page_head(f"Events · {dated} upcoming · {len(live) - dated} regular meetings",
                      "Workshops and events",
-                     "Workshops, meetups and hackathons around Bonn.")
+                     "Some workshops, meetups and hackathons around Bonn.")
     return page_file({"title": "Workshops and events", "description": "Upcoming workshops, "
                       "meetups, hackathons and courses in Bonn for students building a prototype.",
                       "kind": "guide", "hide": ["navigation", "toc"]},

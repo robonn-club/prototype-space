@@ -170,6 +170,7 @@ class Deciding(unittest.TestCase):
         self.assertEqual(ev.check(data, DAY), [])
         self.assertEqual(data["place"], "Transfer Center enaCom, Bonn")
         self.assertEqual((data["time"], data["language"], data["cost"]), ("10:00–14:00", "English", "not stated"))
+        self.assertNotIn("<dt>Language</dt>", ev.card(ev.Event(data, 0, "x"), DAY))
         self.assertEqual(data["topics"], ["ai", "design"])
         self.assertEqual(data["register"], "https://www.uni-bonn.de/register")
 

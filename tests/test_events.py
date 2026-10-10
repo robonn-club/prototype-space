@@ -155,7 +155,8 @@ class Cards(unittest.TestCase):
     def test_one_link_called_page_to_the_events_own_page(self):
         html = self.card(note="Bring a laptop.", who="Students", register="https://example.org/form")
         self.assertIn('href="https://example.org/" rel="noopener" aria-label="Page for A workshop">Page</a>', html)
-        for gone in ("Register", "Organiser", "calendar", "Checked", "<dt>Who</dt>", "Bring a laptop",
+        for gone in ("Register", "Organiser", "calendar", "Checked", "<dt>Who</dt>", "<dt>Language</dt>",
+                     "Bring a laptop",
                      "Confirmed", "https://example.org/form"):
             self.assertNotIn(gone, html)
 
