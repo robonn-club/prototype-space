@@ -221,7 +221,7 @@ page reader in `find_events.py` if it only has a web page. The pull request's *S
 section says when a source could not be read or suddenly lists nothing, which usually means its
 page changed.
 
-The finder reads only what organisers publish themselves. DPMA, IHK, VHS and Datenburg have no
+The finder reads only what organisers publish themselves. DPMA, IHK and Datenburg have no
 calendar to read; the weekly review's source list is the reminder to look at them by hand.
 
 Suggestions from students arrive as issues through the *Suggest an event* form. Check them against

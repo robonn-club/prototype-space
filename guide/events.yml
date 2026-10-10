@@ -150,23 +150,6 @@ events:
     checked: 2026-10-10
     summary: Submit a short idea sketch; the best ideas win up to €5,000 and pitch at the final.
 
-  - title: "Erfolgreich selbständig: Existenzgründung (mit KI-Unterstützung)"
-    organiser: Volkshochschule Bonn
-    topics: [founding, ai]
-    format: course
-    region: bonn
-    date: 2026-11-14
-    end: 2026-11-15
-    time: "09:30–17:00 both days"
-    place: VHS Bonn, city centre
-    cost: "€109.40, reduced €82.28"
-    who: Adults; 6 to 8 places
-    language: German
-    register: https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html?action%5B148%5D=course&courseId=484-C-N5004
-    source: https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html?action%5B148%5D=course&courseId=484-C-N5004
-    checked: 2026-10-10
-    summary: A weekend from business plan and market to financing, legal form and taxes, using your own idea.
-
   - title: Green Bonn Hackathon 2026
     organiser: Transfer Center enaCom, Start-up-Manufaktur and Stadtwerke Bonn
     topics: [software, founding]
@@ -490,9 +473,6 @@ sources:
     url: https://www.ihk-bonn.de/innovation-und-umwelt/innovation/gewerbliche-schutzrechte
   - name: DPMA, workshops and seminars
     url: https://www.dpma.de/dpma/veranstaltungen/workshops/index.html
-  - name: Volkshochschule Bonn
-    url: https://www.vhs-bonn.de/programm/beruf-it-und-digitales.html
-    note: founding and AI courses; no electronics or 3D-printing courses this term
 
 # The event finder never proposes an event whose title contains one of these
 # (not case-sensitive). Add a word when the same kind of unsuitable event keeps
