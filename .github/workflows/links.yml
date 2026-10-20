@@ -1,7 +1,8 @@
 name: Check links
 
 # The collection is a directory of external links carrying a "dates checked"
-# claim. Without this it rots silently. Weekly, and on demand.
+# claim. Without this it rots silently. Weekly, and on demand. Anything broken
+# opens (or updates) one issue, which closes itself once every link works again.
 on:
   schedule:
     - cron: "0 6 * * 1"   # Mondays, 06:00 UTC
@@ -15,14 +16,16 @@ jobs:
   lychee:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Check every link in the markdown
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          # 403 and 429 are bot-blocking and rate limiting, not dead pages —
-          # accepting them keeps the issue about links that genuinely broke.
+          # 403 and 429 are bot-blocking and rate limiting, and 202 is the
+          # challenge some firewalls answer datacenter IPs with (deutschlandticket.de
+          # does); none of them is a dead page, so accepting them keeps the issue
+          # about links that genuinely broke.
           # The resources live in docs/ and the guide in guide/; both are checked.
           # Links between the markdown files are checked by the site build, so
           # only web links are tested here.
@@ -32,14 +35,32 @@ jobs:
             --scheme http
             --max-retries 2
             --timeout 20
-            --accept 200,206,403,429
+            --accept 200,202,206,403,429
             "./*.md" "./docs/*.md" "./guide/**/*.md" "./guide/*.yml"
           fail: false
 
-      - name: Open an issue if anything broke
+      - name: Find the open link report
+        id: open
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --label link-rot --state open --json number --jq '.[0].number // empty')
+          echo "number=$number" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the link report
         if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: Dead links found in prototype-space
           content-filepath: ./lychee/out.md
           labels: link-rot
+          issue-number: ${{ steps.open.outputs.number }}
+
+      - name: Close the link reports once every link works
+        if: steps.lychee.outputs.exit_code == 0 && steps.open.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for number in $(gh issue list --label link-rot --state open --json number --jq '.[].number'); do
+            gh issue close "$number" --comment "Every link works again as of run $GITHUB_RUN_ID."
+          done

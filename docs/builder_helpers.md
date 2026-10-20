@@ -132,7 +132,7 @@ contribution, which makes travel across NRW a sunk cost rather than a decision.
 - **[Bundesamt für Sicherheit in der Informationstechnik](https://www.bsi.bund.de/EN/Home/home_node.html)** — The federal cybersecurity agency, headquartered in Bonn and the anchor of the city's security cluster. — `free` · `bonn` · `employer`
 - **[UN in Bonn](https://unbonn.org/)** — The United Nations presence in the city, around twenty institutions concentrated on climate, environment and volunteering. — `free` · `bonn` · `employer`
 - **[Bonn cybersecurity hub](https://www.bonn.de/themen-entdecken/wirtschaft-wissenschaft/bonn4sure-cybersecurity-hub.php?loc=en)** — The city's account of why security expertise concentrates here, naming the agencies, corporates and institutes involved. — `free` · `bonn` · `overview`
-- **[Bonn economic development](https://www.bonn.de/themen-entdecken/wirtschaft-wissenschaft/wirtschaftsfoerderung.php?loc=en)** — The municipal office for business support, and the first point of contact for anything requiring the city itself. — `free advice` · `bonn` · `official`
+- **[Bonn economic development](https://www.bonn.de/themen-entdecken/wirtschaft-wissenschaft/wirtschaftsstandort-bonn.php?loc=en)** — The municipal office for business support, and the first point of contact for anything requiring the city itself. — `free advice` · `bonn` · `official`
 
 DHL Group is headquartered in the city and is the nearest large employer working on logistics
 automation. Its corporate site blocks automated checks, so no entry is listed here rather than one
