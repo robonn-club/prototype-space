@@ -402,6 +402,49 @@ events:
     checked: 2026-10-20
     summary: The student contest for autonomous robots in real crop rows.
 
+  # --- proposed by the weekly finder on 2026-10-20: check each against its page,
+  # rewrite the summary, fix place and cost, delete what does not fit ---
+
+  - title: "Community Breakfast X Health"
+    organiser: "DIGITALHUB.DE"
+    topics: [founding]
+    format: meetup
+    region: bonn
+    date: 2026-11-04
+    time: "09:30–10:30"
+    place: "DIGITALHUB.DE CITYHUB, Bonn (at the main station)"
+    cost: ~
+    source: "https://www.digitalhub.de/en/eventkalender-intern/community-breakfast-x-health"
+    checked: 2026-10-20
+    summary: "Bei unserem monatlichen Startup X Community Breakfast laden wir zum Netzwerken ein."
+
+  - title: "9. KI Stammtisch Bonn"
+    organiser: "KI Summit Bonn (meetup group)"
+    topics: [ai]
+    format: meetup
+    region: bonn
+    date: 2027-01-21
+    time: "17:30–20:30"
+    place: "Bonn"
+    cost: ~
+    source: "https://www.meetup.com/bonner-ki-meetup/events/316350115/"
+    checked: 2026-10-20
+    summary: "Wie immer ist das Event offen für Teilnehmer*innen aller Unternehmen und Privatleute, die sich zum Thema KI austauschen- und dazu networken möchten."
+
+  - title: "Female Founders Venture Summit 2027"
+    organiser: "DIGITALHUB.DE"
+    topics: [founding]
+    format: meetup
+    region: bonn
+    date: 2027-03-04
+    time: "12:00–20:00"
+    place: "DIGITALHUB.DE CITYHUB, Bonn (at the main station)"
+    cost: ~
+    source: "https://www.digitalhub.de/en/eventkalender-intern/female-founders-venture-summit-2027"
+    checked: 2026-10-20
+    summary: "Am 4. März 2027 dreht sich bei uns wieder alles um die Power von Gründerinnen."
+
+
 # Where to look for new listings. The events page shows this list as Resources,
 # and the weekly review links it. Every Sunday the event finder (find_events.py)
 # reads each source that has a `calendar` (an iCal address) or a `reader` (one
