@@ -266,7 +266,7 @@ def known(v) -> bool:
 
 def when_text(e: Event, day: dt.date) -> str:
     if not e.recurring:
-        time = f", {e['time']}" if e["time"] else ""
+        time = f", {e['time']}" if known(e["time"]) else ""
         return span(e) + time
     text = e["recurring"]
     if e.dates:

@@ -165,6 +165,11 @@ class Cards(unittest.TestCase):
         self.assertNotIn("<dt>Cost</dt>", self.card(cost="not stated"))
         self.assertNotIn("<dt>Cost</dt>", self.card(cost=None))
 
+    def test_time_only_when_the_organiser_states_it(self):
+        self.assertIn("<dd>Sun 1 Nov 2026, 10:00–12:00</dd>", self.card())
+        self.assertIn("<dd>Sun 1 Nov 2026</dd>", self.card(time="not stated"))
+        self.assertIn("<dd>Sun 1 Nov 2026</dd>", self.card(time=None))
+
 
 class Calendar(unittest.TestCase):
     def test_times_are_in_bonn_time(self):
