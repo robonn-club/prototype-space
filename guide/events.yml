@@ -20,39 +20,6 @@ events:
 
   # --- dated events, in Bonn, Sankt Augustin and online ----------------------
 
-  - title: KI Summit Bonn
-    organiser: KI Summit Bonn (meetup group)
-    topics: [ai]
-    format: meetup
-    region: bonn
-    date: 2026-10-15
-    time: "18:00–21:00"
-    place: SprintEins office, Bonn
-    cost: not stated
-    who: Anyone interested in AI
-    language: German
-    register: https://sprinteins.com/insights/kisb-15102026
-    source: https://www.meetup.com/bonner-ki-meetup/events/315679785/
-    checked: 2026-10-10
-    summary: Two talks on agentic engineering, then food, drinks and Bonn's AI community.
-    note: An RSVP on Meetup is not enough; register through the organisers' form.
-
-  - title: H-BRS Start-up Cup final
-    organiser: Start-up-Manufaktur, Hochschule Bonn-Rhein-Sieg
-    topics: [founding]
-    format: pitch night
-    region: bonn
-    date: 2026-10-15
-    time: "17:00–20:00"
-    place: H-BRS campus, Sankt Augustin (lecture hall B118)
-    cost: Free
-    who: Open audience
-    language: German
-    register: https://www.h-brs.de/de/anmeldung-cupfinale26
-    source: https://www.h-brs.de/de/gruenden/termin/finale-2026
-    checked: 2026-10-10
-    summary: Five founding teams pitch live for €2,250 in prizes, and the audience votes for one of them.
-
   - title: "Start-up financing: understanding your options"
     organiser: Transfer Center enaCom, Uni Bonn
     topics: [founding]
@@ -66,7 +33,7 @@ events:
     language: English
     register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration-start-up_financing_10_26
     source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-financing-understanding-your-financing-options-10-26
-    checked: 2026-10-10
+    checked: 2026-10-20
     summary: From self-funding to grants and investors, how a start-up idea gets paid for.
 
   - title: Start-up Career Forum 2026
@@ -82,7 +49,7 @@ events:
     language: not stated
     register: https://www.eventbrite.de/e/startup-karriere-forum-tickets-1985362739398
     source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-karriere-forum-2026
-    checked: 2026-10-10
+    checked: 2026-10-20
     summary: Regional start-ups present themselves, from co-founder matching to internships.
 
   - title: "Embodied AI Meetup: Founders × Talents"
@@ -98,7 +65,7 @@ events:
     language: not stated (page in English)
     register: https://events.lamarr-institute.org/event/499/
     source: https://lamarr-institute.org/events/embodied-ai-meet-up-founders-x-talents/
-    checked: 2026-10-10
+    checked: 2026-10-20
     summary: Regional robotics start-ups talk about hardware bottlenecks and real business cases, then networking.
 
   - title: Impact Pitch Night 2026
@@ -114,7 +81,7 @@ events:
     language: not stated (page in German)
     register: https://www.eventbrite.de/e/impact-pitch-night-2026-changemakers-on-stage-tickets-1999370777818
     source: https://www.h-brs.de/de/gruenden/termin/impact-pitch-26
-    checked: 2026-10-10
+    checked: 2026-10-20
     summary: Five teams from the region pitch social and environmental start-up ideas to a jury and the audience.
 
   - title: "Founders Talk: founding as a career path"
@@ -256,15 +223,15 @@ events:
     topics: [making]
     format: open house
     region: bonn
-    recurring: Usually once a week; in October 2026 on Mondays, 18:00–21:00
-    next: [2026-10-12, 2026-10-19]
+    recurring: Usually once a week, 18:00–21:00, on a day that varies
+    next: [2026-10-27, 2026-11-03]
     place: MakerSpace Bonn
     cost: Free tour
     who: Anyone interested, guests and members
     language: not stated (site in German)
     register: No registration needed; check the calendar on the day
     source: https://www.makerspacebonn.de/index.php/der-verein/uns-kennenlernen
-    checked: 2026-10-10
+    checked: 2026-10-20
     summary: A free tour of the 3D printers, laser cutters, CNC and metal shop, and the way in to membership.
 
   - title: Offener Burgabend (open evening)
@@ -350,7 +317,7 @@ events:
     summary: Fifteen minutes with a patent attorney for a first answer on protecting an invention.
 
   # --- further afield: events to show a build at -----------------------------
-  # Dates were checked for the show step; cost and eligibility not yet.
+  # Dates and cost checked on the organisers' pages; eligibility mostly not yet.
 
   - title: Maker Faire Ruhr
     organiser: Maker Faire Ruhr
@@ -359,14 +326,14 @@ events:
     region: further
     date: 2027-03-13
     end: 2027-03-14
-    time: ~
+    time: not stated
     place: DASA, Dortmund
-    cost: ~
+    cost: not stated
     who: ~
     language: ~
     register: Ask the organisers about exhibiting
     source: https://www.makerfaire-ruhr.com/
-    checked: 2026-09-25
+    checked: 2026-10-20
     summary: The nearest large maker festival to Bonn, reachable on the semester ticket.
 
   - title: RoboCup 2027 world championship
@@ -374,16 +341,16 @@ events:
     topics: [showcase, robotics]
     format: competition
     region: further
-    date: 2027-06-15
+    date: 2027-06-17
     end: 2027-06-21
-    time: ~
+    time: not stated
     place: Messe Nürnberg, Nuremberg
-    cost: ~
+    cost: not stated
     who: ~
     language: ~
     register: Leagues need registered teams; visitors see the organiser's page
-    source: https://robocup.de/en/events/world-cup-2027
-    checked: 2026-10-10
+    source: https://2027.robocup.org/
+    checked: 2026-10-20
     summary: Competition-grade robots up close, the first world championship in Germany since 2016.
 
   - title: Maker Faire Hannover
@@ -393,14 +360,14 @@ events:
     region: further
     date: 2027-08-21
     end: 2027-08-22
-    time: ~
+    time: not stated
     place: Hannover Congress Centrum, Hannover
-    cost: ~
-    who: ~
+    cost: Free to exhibit for non-commercial makers; visitor tickets not stated
+    who: Makers, makerspaces, schools and universities can exhibit
     language: ~
-    register: ~
-    source: https://maker-faire.de/alle-maker-faires/
-    checked: 2026-09-25
+    register: https://maker-faire.de/hannover/anmeldung/
+    source: https://maker-faire.de/hannover/
+    checked: 2026-10-20
     summary: Germany's largest maker festival.
 
   - title: Nacht der Technik Bonn/Rhein-Sieg
@@ -411,12 +378,12 @@ events:
     date: 2027-10-01
     time: "18:00–24:00"
     place: Venues across Bonn and the Rhein-Sieg district
-    cost: ~
+    cost: not stated (ticketed; tickets on sale from 15 September 2027)
     who: ~
     language: ~
-    register: ~
+    register: Tickets from 15 September 2027 at Westticket; the ticket code reserves three programme items
     source: https://nacht-der-technik.de/bonn-rhein-sieg/
-    checked: 2026-09-25
+    checked: 2026-10-20
     summary: The local technology night, held every two years, and the shortest way to a public audience.
 
   - title: Field Robot Event
@@ -424,14 +391,14 @@ events:
     topics: [showcase, robotics]
     format: competition
     region: further
-    recurring: Once a year; the 2026 edition ran 16–18 June in Bernburg, and the 2027 date is not announced
-    place: Changes each year
-    cost: ~
+    recurring: Once a year; the 2027 edition is in June 2027, exact dates to be confirmed
+    place: Changes each year; in 2027 the University of Lincoln's Riseholme Campus, United Kingdom
+    cost: not stated
     who: Student teams
     language: ~
-    register: ~
+    register: Team registration is not open yet; the page says it opens soon
     source: https://www.fieldrobotevent.eu/
-    checked: 2026-09-25
+    checked: 2026-10-20
     summary: The student contest for autonomous robots in real crop rows.
 
 # Where to look for new listings. The events page shows this list as Resources,
