@@ -6,8 +6,11 @@ name: Find events
 # reviewed and merged it. Proposals deleted in review are remembered in
 # guide/events-seen.yml and not proposed again.
 #
-# Needs, once: Settings → Actions → General → Workflow permissions →
-# "Allow GitHub Actions to create and approve pull requests".
+# Needs, once: "Allow GitHub Actions to create and approve pull requests" under
+# Settings → Actions → General → Workflow permissions, ticked first in the
+# organisation's settings (the repository's box is greyed out until then) and
+# then in this repository's. The default token can stay read-only: the
+# permissions below are all this workflow needs.
 on:
   schedule:
     - cron: "0 6 * * 0"     # Sundays, 06:00 UTC (07:00 or 08:00 in Bonn)

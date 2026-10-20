@@ -227,8 +227,10 @@ calendar to read; the weekly review's source list is the reminder to look at the
 Suggestions from students arrive as issues through the *Suggest an event* form. Check them against
 the organiser's page like any other entry.
 
-The Sunday pull request needs one setting, once: *Settings → Actions → General → Workflow
-permissions → Allow GitHub Actions to create and approve pull requests*. GitHub also pauses
+The Sunday pull request needs one setting, once: *Allow GitHub Actions to create and approve pull
+requests*, under *Settings → Actions → General → Workflow permissions*. The repository's box is
+greyed out until an organisation owner ticks the same box in the organisation's settings; then
+tick it here too. The default token can stay read-only. GitHub also pauses
 scheduled workflows in a repository with no activity for 60 days; if the nightly rebuild or a
 Sunday workflow stops, re-enable it under *Actions*.
 
