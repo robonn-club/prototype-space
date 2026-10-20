@@ -3,7 +3,8 @@ name: Events review
 # Once a week: which listings in guide/events.yml have ended, start soon and
 # need a second look, or have not been checked for a while. The site already
 # hides ended events every night; this is the reminder to tidy the file and to
-# look for new ones. Anything to do opens (or updates) one issue.
+# look for new ones. Anything to do opens (or updates) one issue, and a week
+# with nothing to do closes it.
 on:
   schedule:
     - cron: "0 7 * * 0"     # Sundays, 07:00 UTC, an hour after the event finder
@@ -17,8 +18,8 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -46,9 +47,18 @@ jobs:
 
       - name: Open or update the review issue
         if: steps.review.outputs.code == '1'
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: Events review
           content-filepath: ./review.md
           labels: events-review
           issue-number: ${{ steps.open.outputs.number }}
+
+      - name: Close the review issue when nothing is due
+        if: steps.review.outputs.code == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for number in $(gh issue list --label events-review --state open --json number --jq '.[].number'); do
+            gh issue close "$number" --comment "Nothing to delete, recheck or fill in as of run $GITHUB_RUN_ID."
+          done
