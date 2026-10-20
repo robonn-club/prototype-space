@@ -352,6 +352,7 @@ events:
     source: https://2027.robocup.org/
     checked: 2026-10-20
     summary: Competition-grade robots up close, the first world championship in Germany since 2016.
+    note: RoboCup Germany's news page gives 15–21 June for the whole championship; the event's own site gives 17–21 June, the days listed here.
 
   - title: Maker Faire Hannover
     organiser: Maker Faire
