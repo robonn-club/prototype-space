@@ -1,0 +1,13 @@
+# Written by find_events.py: every event the weekly finder has proposed, so a proposal
+# deleted from its pull request is not proposed again. Entries go a month after the event.
+
+seen:
+- url: https://www.digitalhub.de/en/eventkalender-intern/community-breakfast-x-health
+  date: '2026-11-04'
+  title: Community Breakfast X Health
+- url: https://www.meetup.com/bonner-ki-meetup/events/316350115
+  date: '2027-01-21'
+  title: 9. KI Stammtisch Bonn
+- url: https://www.digitalhub.de/en/eventkalender-intern/female-founders-venture-summit-2027
+  date: '2027-03-04'
+  title: Female Founders Venture Summit 2027
