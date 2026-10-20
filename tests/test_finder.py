@@ -192,17 +192,20 @@ class Writing(unittest.TestCase):
         self.assertEqual(fe.summary(found("t", DAY, description="Wer? Wo?")), "See the organiser's page for the details.")
 
     def test_proposals_go_before_the_sources_and_load_cleanly(self):
+        # The real file, which the finder has just extended with entries checked today,
+        # so it is judged as of today: against the frozen DAY they would be "in the future".
+        day = ev.today()
         text = (ROOT / "guide" / "events.yml").read_text(encoding="utf-8")
         data = {"title": "A test", "organiser": "Org", "topics": ["ai"], "format": "meetup", "region": "bonn",
                 "date": D(2026, 12, 1), "time": None, "place": "Bonn", "cost": None, "language": None,
-                "source": "https://example.org/x", "checked": DAY, "summary": "A short sentence."}
+                "source": "https://example.org/x", "checked": day, "summary": "A short sentence."}
         out = fe.insert(text, fe.as_yaml(data))
         self.assertLess(out.index('title: "A test"'), out.index("\nsources:"))
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "events.yml"
             path.write_text(out, encoding="utf-8")
-            listings, _, problems = ev.load(path, DAY)
+            listings, _, problems = ev.load(path, day)
         self.assertEqual(problems, [])
         self.assertIn("A test", [e["title"] for e in listings])
 
