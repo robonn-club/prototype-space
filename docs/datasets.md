@@ -87,7 +87,7 @@ Licences section of [certification_resources.md](certification_resources.md).
 
 - **[Hugging Face robotics datasets](https://huggingface.co/datasets?task_categories=task_categories:robotics)** — Browsable and filterable, and where most new robot datasets now appear first.
 - **[re3data](https://www.re3data.org/)** — A registry of more than 3,500 research data repositories, filterable by subject and country, for finding the repository before the dataset.
-- **[BonaRes](https://www.bonares.de/)** — The German repository for standardised soil and long-term agricultural field-experiment data, published under FAIR principles.
+- **[BonaRes](https://bonares.de/)** — The German repository for standardised soil and long-term agricultural field-experiment data, published under FAIR principles.
 - **[data.europa.eu](https://data.europa.eu/en)** — The EU open data portal, covering agriculture, environment and geospatial data published by member states.
 - **[Google Dataset Search](https://datasetsearch.research.google.com/)** — Indexes datasets across repositories that publish structured metadata, useful when the hosting repository is unknown.
 - **[bonndata](https://bonndata.uni-bonn.de/)** — Uni Bonn's own institutional research data repository, filterable by subject including agricultural sciences.
