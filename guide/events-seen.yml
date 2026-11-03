@@ -1,0 +1,43 @@
+# Written by find_events.py: every event the weekly finder has proposed, so a proposal
+# deleted from its pull request is not proposed again. Entries go a month after the event.
+
+seen:
+- url: https://www.digitalhub.de/en/eventkalender-intern/community-breakfast-x-health
+  date: '2026-11-04'
+  title: Startup X Community Breakfast - Health Edition
+- url: https://events.lamarr-institute.org/event/501
+  date: '2026-11-05'
+  title: Tutorial on Agentive AI for Scientific Discovery
+- url: https://events.lamarr-institute.org/event/505
+  date: '2026-11-13'
+  title: Seminar | Agentic Workflows for Research
+- url: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/joint-business-winter-school-from-research-to-use-case
+  date: '2026-11-23'
+  title: 'NeurotechEU Winter School: From Research to Use Case'
+- url: https://www.digitalhub.de/en/eventkalender-intern/startup-x-community-breakfast-5
+  date: '2026-12-02'
+  title: Startup X Community Breakfast
+- url: https://www.meetup.com/bonner-ki-meetup/events/316350115
+  date: '2027-01-21'
+  title: 9. KI Stammtisch Bonn
+- url: https://www.digitalhub.de/en/eventkalender-intern/startup-x-community-breakfast-6
+  date: '2027-02-03'
+  title: Startup X Community Breakfast
+- url: https://www.digitalhub.de/en/eventkalender-intern/female-founders-venture-summit-2027
+  date: '2027-03-04'
+  title: Female Founders Venture Summit 2027
+- url: https://www.digitalhub.de/en/eventkalender-intern/startup-x-community-breakfast-6-copy
+  date: '2027-04-07'
+  title: Startup X Community Breakfast
+- url: https://tickets.makerspacebonn.de/msb/msb-lan26-2
+  date: '2026-11-14'
+  title: MakerSpace LAN Party 2026 die 2.
+- url: https://tickets.makerspacebonn.de/msb/popup-card26
+  date: '2026-11-15'
+  title: Pop-Up card Workshop
+- url: https://tickets.makerspacebonn.de/msb/nikolaus26
+  date: '2026-11-28'
+  title: Workshop Demystifizierung Lebkuchenhaus bauen
+- url: https://tickets.makerspacebonn.de/msb/cookies-2026
+  date: '2026-12-05'
+  title: Plätzchen-Werkstatt im Makerspace

@@ -20,54 +20,6 @@ events:
 
   # --- dated events, in Bonn, Sankt Augustin and online ----------------------
 
-  - title: "Start-up financing: understanding your options"
-    organiser: Transfer Center enaCom, Uni Bonn
-    topics: [founding]
-    format: talk
-    region: online
-    date: 2026-10-22
-    time: "12:00–13:30"
-    place: Online
-    cost: not stated
-    who: Students
-    language: English
-    register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration-start-up_financing_10_26
-    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-financing-understanding-your-financing-options-10-26
-    checked: 2026-10-20
-    summary: From self-funding to grants and investors, how a start-up idea gets paid for.
-
-  - title: Start-up Career Forum 2026
-    organiser: Transfer Center enaCom, Uni Bonn
-    topics: [founding]
-    format: fair
-    region: bonn
-    date: 2026-10-27
-    time: "17:00–19:00"
-    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
-    cost: Free
-    who: Students
-    language: not stated
-    register: https://www.eventbrite.de/e/startup-karriere-forum-tickets-1985362739398
-    source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-karriere-forum-2026
-    checked: 2026-10-20
-    summary: Regional start-ups present themselves, from co-founder matching to internships.
-
-  - title: "Embodied AI Meetup: Founders × Talents"
-    organiser: Lamarr Institute
-    topics: [robotics, ai, founding]
-    format: meetup
-    region: bonn
-    date: 2026-10-28
-    time: "17:00–19:00"
-    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
-    cost: not stated
-    who: Designed for master's and PhD students and postdocs; 60 places
-    language: not stated (page in English)
-    register: https://events.lamarr-institute.org/event/499/
-    source: https://lamarr-institute.org/events/embodied-ai-meet-up-founders-x-talents/
-    checked: 2026-10-20
-    summary: Regional robotics start-ups talk about hardware bottlenecks and real business cases, then networking.
-
   - title: Impact Pitch Night 2026
     organiser: Start-up-Manufaktur (H-BRS), enaCom and DIGITALHUB.DE
     topics: [founding]
@@ -97,8 +49,26 @@ events:
     language: German
     register: No registration needed
     source: https://www.h-brs.de/de/gruenden/termin/founders-talk
-    checked: 2026-10-10
+    checked: 2026-11-03
     summary: Two founders, one with a start-up from an H-BRS research project, on what founding really looks like.
+
+  - title: "Tutorial: AI agents for scientific discovery"
+    organiser: Lamarr Institute
+    topics: [ai, software]
+    format: workshop
+    region: bonn
+    date: 2026-11-05
+    end: 2026-11-06
+    time: "14:00–17:00 on both days"
+    place: Institute of Computer Science, University of Bonn, and online
+    cost: not stated
+    who: Students and researchers at all levels
+    language: not stated (page in English)
+    register: https://events.lamarr-institute.org/event/501/
+    source: https://events.lamarr-institute.org/event/501/
+    checked: 2026-11-03
+    summary: Two hands-on afternoons building an AI agent that runs drug-discovery software through an LLM and MCP.
+    note: Bring a laptop that can run a small local LLM (under 4 GB, in LM Studio), or use a computer science department login.
 
   - title: Ideas Competition 2026
     organiser: Transfer Center enaCom, Uni Bonn
@@ -132,7 +102,7 @@ events:
     language: German
     register: https://www.eventbrite.de/e/green-bonn-hackathon-2026-tickets-2001168199956
     source: https://www.h-brs.de/de/gruenden/termin/greenbonn-26
-    checked: 2026-10-10
+    checked: 2026-11-03
     summary: Build a digital prototype that makes Stadtwerke Bonn's environmental data usable; prizes of €1,500, €1,000 and €500.
     note: Places are limited; apply with a short motivation and wait for a confirmed place.
 
@@ -149,7 +119,7 @@ events:
     language: English
     register: https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration_non-eu-nationals_11_26
     source: https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/starting-a-business-in-germany-a-guide-for-non-eu-nationals-1
-    checked: 2026-10-10
+    checked: 2026-11-03
     summary: What a non-EU student needs to know before and while working self-employed or founding in Germany.
 
   - title: KI Meetup
@@ -184,6 +154,22 @@ events:
     checked: 2026-10-10
     summary: A relaxed breakfast for women from different fields who are founding or thinking about it.
 
+  - title: KI Stammtisch Bonn (AI meetup)
+    organiser: KI Summit Bonn (meetup group)
+    topics: [ai]
+    format: meetup
+    region: bonn
+    date: 2027-01-21
+    time: "17:30–20:30"
+    place: Aktion Mensch, Bonn
+    cost: not stated
+    who: Anyone interested in AI, from companies or in private
+    language: not stated (page in German)
+    register: RSVP on the Meetup page
+    source: https://www.meetup.com/bonner-ki-meetup/events/316350115/
+    checked: 2026-11-03
+    summary: An informal round on practical AI cases, challenges and trends, then networking.
+
   - title: From an AI idea to the first prototype
     organiser: Transfer Center enaCom, Uni Bonn
     topics: [ai, design]
@@ -216,6 +202,22 @@ events:
     checked: 2026-10-10
     summary: Connect customer needs and your value proposition into a business model, using your own start-up idea.
 
+  - title: Female Founders Venture Summit 2027
+    organiser: DIGITALHUB.DE
+    topics: [founding]
+    format: meetup
+    region: bonn
+    date: 2027-03-04
+    time: "12:00–20:00"
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: not stated
+    who: Founders, investors and anyone thinking about founding
+    language: not stated (page in German)
+    register: https://vivenu.com/event/female-founders-venture-summit-5obnli
+    source: https://www.digitalhub.de/en/eventkalender-intern/female-founders-venture-summit-2027
+    checked: 2026-11-03
+    summary: Women founders pitch for the Female Innovation Award, with keynotes and networking with investors.
+
   # --- recurring programmes ---------------------------------------------------
 
   - title: Offene Tür (open evening)
@@ -224,14 +226,14 @@ events:
     format: open house
     region: bonn
     recurring: Usually once a week, 18:00–21:00, on a day that varies
-    next: [2026-10-27, 2026-11-03]
+    next: [2026-11-03, 2026-11-10, 2026-11-24]
     place: MakerSpace Bonn
     cost: Free tour
     who: Anyone interested, guests and members
     language: not stated (site in German)
     register: No registration needed; check the calendar on the day
     source: https://www.makerspacebonn.de/index.php/der-verein/uns-kennenlernen
-    checked: 2026-10-20
+    checked: 2026-11-03
     summary: A free tour of the 3D printers, laser cutters, CNC and metal shop, and the way in to membership.
 
   - title: Offener Burgabend (open evening)
@@ -269,6 +271,23 @@ events:
     summary: Meet founders and people with ideas, find a co-founder, and ask experts; drinks are free.
     note: The dates listed are from enaCom's calendar; no meetup is listed there for November.
 
+  - title: Startup X Community Breakfast
+    organiser: DIGITALHUB.DE
+    topics: [founding]
+    format: meetup
+    region: bonn
+    recurring: First Wednesday of the month, 09:30–10:30
+    next: [2026-11-04, 2026-12-02, 2027-02-03, 2027-04-07]
+    place: DIGITALHUB.DE CITYHUB, Bonn (at the main station)
+    cost: not stated
+    who: Anyone interested
+    language: not stated (page in German)
+    register: https://digitaler-hub-region-bonn-ag-fzrg.vivenushop.com/section/startup-breakfast-xq8j
+    source: https://www.digitalhub.de/en/eventkalender-intern/startup-x-community-breakfast-5
+    checked: 2026-11-03
+    summary: A start-up pitches over coffee and croissants, then the hub's community networks until 10:30.
+    note: The 4 November breakfast is a health edition with start-ups from the hub's HUBGRADE Health programme; no breakfast is announced for January or March.
+
   - title: b-it-bots team meetings
     organiser: b-it-bots, Hochschule Bonn-Rhein-Sieg
     topics: [robotics, ai, software]
@@ -283,6 +302,23 @@ events:
     source: https://www.h-brs.de/en/a2s/b-it-bots
     checked: 2026-10-10
     summary: Join a RoboCup team working with ROS, Python and C++ on home and factory robots.
+
+  - title: "Lamarr lecture series: embodied AI, logistics and industry"
+    organiser: Lamarr Institute (University of Bonn and TU Dortmund)
+    topics: [robotics, ai]
+    format: talk
+    region: bonn
+    recurring: Tuesdays 10:15–11:45 this winter; embodied AI on 24 Nov and 1 Dec, logistics on 22 Dec, industry and production on 26 Jan
+    next: [2026-11-24, 2026-12-01, 2026-12-22, 2027-01-26]
+    place: University of Bonn (room not stated); sessions given in Dortmund are streamed to Bonn
+    cost: not stated
+    who: Designed for master's students in computer science; part of the MSc in Artificial Intelligence
+    language: not stated (page in English)
+    register: not stated
+    source: https://lamarr-institute.org/events/lamarr-lecture-series-winter-semester-2026-27/
+    checked: 2026-11-03
+    summary: Researchers present one area of AI each week; the robotics sessions cover embodied AI, robot navigation and vision-language-action models.
+    note: Other weeks cover hybrid ML, NLP, life sciences, physics and human-centred AI. The page does not say whether students outside the MSc can attend; the series earns ECTS inside it.
 
   - title: "Brown-bag seminars: IP and copyright basics"
     organiser: Deutsches Patent- und Markenamt (DPMA)
