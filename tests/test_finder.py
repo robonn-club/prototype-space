@@ -89,6 +89,19 @@ class Reading(unittest.TestCase):
         self.assertIn("Teilnehmer*innen", stammtisch.description)
         self.assertEqual((hackathon.day, hackathon.last_day), (D(2026, 11, 16), D(2026, 11, 22)))
 
+    def test_pretix_links_the_event_in_its_description(self):
+        # The MakerSpace's ticket shop (pretix) writes no URL property, as in November 2026.
+        ics = ("BEGIN:VCALENDAR\r\nBEGIN:VEVENT\r\n"
+               "UID:pretix-msb-popup-card26-0@tickets.makerspacebonn.de\r\n"
+               "DTSTART;TZID=Europe/Berlin:20261115T150000\r\nDTEND;TZID=Europe/Berlin:20261115T180000\r\n"
+               "DESCRIPTION:Tickets: https://tickets.makerspacebonn.de/msb/popup-card26/\\nV\r\n"
+               " eranstalter: MakerSpace Bonn e.V.\r\n"
+               "LOCATION:MakerSpace Bonn e.V.\\, Kennedyallee 18\\, 53175 Bonn\r\n"
+               "SUMMARY:Pop-Up card Workshop\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n")
+        item, = fe.parse_ics(ics, "MakerSpace Bonn e.V.", "MakerSpace")
+        self.assertEqual(item.url, "https://tickets.makerspacebonn.de/msb/popup-card26/")
+        self.assertIn("Veranstalter: MakerSpace Bonn e.V.", item.description)
+
     def test_enacom_fields(self):
         fields = fe.read_enacom(ENACOM_PAGE)
         self.assertEqual(fields["Target groups"], "Researchers")

@@ -61,6 +61,7 @@ VENUES = [
     (r"digitalhub", "DIGITALHUB.DE, Bonn"),
 ]
 ONLINE = re.compile(r"\b(online|zoom|webex|virtual|virtuell|livestream)\b", re.IGNORECASE)
+LINK = re.compile(r"https?://[^\s<>\"']+")
 
 # What a listing is about, read from its title, description and the organiser's
 # own topic field. An event that matches none of these is not proposed.
@@ -213,12 +214,17 @@ def parse_ics(text: str, organiser: str = "", source: str = "") -> list[Found]:
         end = moment(item.get("DTEND"))
         if isinstance(end, dt.date) and not isinstance(end, dt.datetime):
             end = end - dt.timedelta(days=1)                # all-day ends are exclusive
+        description = unescape(item.get("DESCRIPTION", ("",))[0])
+        url = unescape(item.get("URL", ("",))[0]).strip()
+        if not url:         # pretix (the MakerSpace's tickets) has no URL; it links the event in the description
+            link = LINK.search(description)
+            url = link.group(0).rstrip(".,;)") if link else ""
         out.append(Found(
             title=tidy(text_of(unescape(item["SUMMARY"][0]))),
-            url=unescape(item.get("URL", ("",))[0]).strip(),
+            url=url,
             start=start, end=end,
             location=text_of(unescape(item.get("LOCATION", ("",))[0])),
-            description=text_of(unescape(item.get("DESCRIPTION", ("",))[0])),
+            description=text_of(description),
             organiser=organiser, source=source))
     return out
 
