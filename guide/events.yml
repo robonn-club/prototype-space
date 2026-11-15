@@ -438,6 +438,42 @@ events:
     checked: 2026-10-20
     summary: The student contest for autonomous robots in real crop rows.
 
+  # --- proposed by the weekly finder on 2026-11-15: check each against its page,
+  # rewrite the summary, fix place and cost, delete what does not fit ---
+
+  - title: "Start-up Financing – Understanding Your Financing Options"
+    organiser: "Transfer Center enaCom, Uni Bonn"
+    topics: [founding]
+    format: talk
+    region: online
+    date: 2026-11-25
+    time: "11:00–12:30"
+    place: "Online"
+    cost: not stated
+    who: "Students Researchers All interested"
+    language: "English"
+    register: "https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration-start-up_financing_11_26"
+    source: "https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/start-up-financing-understanding-your-financing-options-11-26"
+    checked: 2026-11-15
+    summary: "From self-funding to public grants and private investors, financing options are diverse and often difficult to navigate."
+
+  - title: "AI People @ Uni Bonn | Community Kick-off"
+    organiser: "Transfer Center enaCom, Uni Bonn"
+    topics: [ai, founding]
+    format: meetup
+    region: bonn
+    date: 2026-12-08
+    time: "15:00–17:00"
+    place: "Transfer Center enaCom, Bonn"
+    cost: not stated
+    who: "Students Researchers All interested"
+    language: "English"
+    register: "https://www.uni-bonn.de/de/forschung-lehre/transfer/transfercenter-enacom/veranstaltungen/anmeldungen/wintersemester-2026/registration-ai-people-at-uni-bonn"
+    source: "https://www.uni-bonn.de/en/research-and-teaching/transfer/transfer-center-enacom/events/ai-people-uni-bonn"
+    checked: 2026-11-15
+    summary: "This event is an opportunity to meet like-minded people from different disciplines, exchange ideas, and discover opportunities for collaboration."
+
+
 # Where to look for new listings. The events page shows this list as Resources,
 # and the weekly review links it. Every Sunday the event finder (find_events.py)
 # reads each source that has a `calendar` (an iCal address) or a `reader` (one
